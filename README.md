@@ -45,7 +45,7 @@ To help better reccomend and start on a good foot with the user, there will be a
 
 
 
-Sources:
+## Sources:
 https://www.apa.org/monitor/2019/01/gen-z 
 https://www.apa.org/monitor/2024/07/antidepressant-use-girls-women-covid-pandemic
 https://www.psychiatrictimes.com/view/managing-adverse-effects-antidepressants
