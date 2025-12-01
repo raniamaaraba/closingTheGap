@@ -1,0 +1,265 @@
+:root {
+  --bg: #fffdf8;
+  --ink: #1f2937;
+  --muted: #6b7280;
+  --accent: #2f6f6b;
+  --border: #e5e7eb;
+  --card: #ffffff;
+  --shadow: 0 8px 24px rgba(0,0,0,0.08);
+  --title-font: "Lavishly Yours", cursive;
+}
+
+
+
+/* Palette variables */
+:root {
+  /*colors impelemented from copiloit to match the given image in the design process
+  --bg: #fffdf8;
+  --surface: #ffffff;
+  --muted: #6b7280;
+  --ink: #1f2937;
+  --border: #e5e7eb;
+  --shadow: 0 8px 24px rgba(0,0,0,0.08);
+
+  --toffee-1: #8B5E3C; /* Fired Earth Toffee */
+  --toffee-2: #C9A77A; /* Rolling Fog / warm neutral */
+  --toffee-3: #7A3B2E; /* Rouge II / deep accent */
+  --toffee-4: #EDE2D6; /* String / light neutral */
+  --toffee-5: #6B3A2A; /* Chestnut / dark warm */
+  --toffee-6: #D9CFC6; /* Marble Hall / pale */
+
+  --rum-1: #6E2F3D; /* Nether Red / raisin tone */
+  --rum-2: #7F5A8A; /* Brassica / muted purple */
+  --rum-3: #5A2E36; /* Edward Bulmer Raisin / deep */
+  --rum-4: #BFA6A8; /* Mylands FTT-005 / muted neutral */
+  --rum-5: #A14B4B; /* Rouge II variant */
+  --rum-6: #5C2F2A; /* Rum & Raisin deep */
+
+  --heather-1: #8A6FA3; /* Heather / amethyst */
+  --heather-2: #6B8FBF; /* Mineral blue */
+  --heather-3: #B9A7C9; /* soft lavender */
+  --heather-4: #4A5F7A; /* muted blue-gray */
+  --heather-5: #E9E6F0; /* pale wash */
+
+  --primary: var(--toffee-1);       /* main accent */
+  --primary-contrast: var(--toffee-4);
+  --accent: var(--rum-2);          /* secondary accent */
+  --accent-contrast: var(--rum-4);
+  --alt-accent: var(--heather-2);  /* alternate accent for sections */
+
+  --card-bg: var(--surface);
+  --card-border: var(--border);
+  --link: var(--accent);
+  --button-bg: var(--primary);
+  --button-text: #fff;
+  --badge-bg: #f1f8f7;
+  --badge-text: var(--primary);
+}
+
+
+/* Links and interactive accents */
+a, .link {
+  color: var(--link);
+}
+
+a:hover, .link:hover {
+  color: var(--alt-accent);
+}
+
+/* Buttons */
+.btn {
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.btn.secondary {
+  background: var(--accent);
+  color: var(--button-text);
+}
+
+/* Cards and panels */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow);
+}
+
+/* Badges */
+.badge {
+  background: var(--badge-bg);
+  color: var(--badge-text);
+  border-radius: 999px;
+  padding: 0.15rem 0.5rem;
+}
+
+/* Directory card accents */
+.dir-card {
+  border-color: rgba(0,0,0,0.06);
+}
+.dir-title a {
+  color: var(--primary);
+}
+.dir-card:hover .dir-title a {
+  color: var(--alt-accent);
+}
+
+/* Optional: theme switch helper classes */
+.theme-warm {
+  --primary: var(--toffee-1);
+  --accent: var(--rum-2);
+  --alt-accent: var(--heather-2);
+}
+.theme-cool {
+  --primary: var(--heather-2);
+  --accent: var(--heather-1);
+  --alt-accent: var(--toffee-2);
+}
+
+
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  display: grid;
+  grid-template-columns: 1fr auto 48px;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.title h1 {
+  margin: 0; 
+  font-family: "Lavishly Yours", cursive;
+  color: var(--primary);
+  font-family: var(--title-font);
+  font-weight: 400;            
+  line-height: 1.1;            
+}
+.subtitle { color: var(--muted); font-size: 0.9rem; }
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+html { scroll-behavior: smooth; }
+
+.section + .section {
+  margin-top: 0.75rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.section { padding: 0.75rem; }
+.section h2 { margin: 0 0 0.5rem 0; font-size: 1.1rem; }
+
+.sticky-notes {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: 1fr 1fr;
+  margin: 1rem 0;
+}
+.sticky {
+  background: #fff6bf;
+  border: 1px solid #f1e27a;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  color: #7a6c2b;
+  box-shadow: 2px 4px 12px rgba(0,0,0,0.08);
+  font-size: 0.95rem;
+}
+.sticky small { display: block; margin-top: 0.25rem; color: #8c7d3a; }
+
+.footer {
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+/* Site header sizing variables (tweak these to taste) */
+:root {
+  --site-header-size: 3rem;        /* desktop main title size */
+  --site-subheader-size: 1.15rem;  /* subtitle size */
+  --section-heading-size: 1.4rem;  /* h2 / section headings */
+  --site-header-line-height: 1.02;
+}
+
+/* Primary site title used in headers */
+.title h1,
+.header-inner .title h1,
+.header h1,
+.page-header h1 {
+  font-size: var(--site-header-size) !important;
+  line-height: var(--site-header-line-height);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+  font-family: var(--title-font), "Times New Roman", serif;
+}
+
+/* Secondary headings used across pages */
+.section h2,
+.dir-heading,
+h2 {
+  font-size: var(--section-heading-size);
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+}
+
+/* Subtitles and smaller header text */
+.subtitle,
+.header .subtitle,
+.page-subtitle {
+  font-size: var(--site-subheader-size);
+  color: var(--muted);
+}
+
+/* Fluid scaling for smaller screens */
+@media (max-width: 1000px) {
+  :root {
+    --site-header-size: 2.4rem;
+    --section-heading-size: 1.2rem;
+    --site-subheader-size: 1rem;
+  }
+}
+@media (max-width: 640px) {
+  :root {
+    --site-header-size: 1.8rem;
+    --section-heading-size: 1.05rem;
+    --site-subheader-size: 0.95rem;
+  }
+
+  /* keep header layout tidy on very small screens */
+  .header-inner { padding: 0.5rem; grid-template-columns: 1fr auto 40px; }
+}
+
