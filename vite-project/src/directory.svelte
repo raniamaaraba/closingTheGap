@@ -58,7 +58,23 @@
 
 <style>
     
-.container { max-width:1100px; margin:0 auto; padding:1rem; box-sizing:border-box; }
+:global(html), :global(body) {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* prevent page-level horizontal scroll */
+}
+
+/* container: full-width but constrained for readability */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
 
 /* header */
 .directory-header {
@@ -67,12 +83,13 @@
   align-items:center;
   gap:1rem;
 }
-/* Directory.svelte — larger, responsive title */
+
+/* Directory.svelte — responsive title */
 .title-block .site-title {
   margin: 0;
   font-family: var(--title-font);
-  font-size: 3.0rem;        /* desktop size — change to taste */
-  line-height: 2;
+  font-size: 3.0rem;
+  line-height: 1.05;
   font-weight: 700;
   letter-spacing: -0.02em;
 }
@@ -90,29 +107,45 @@
 /* controls */
 .controls { display:flex; gap:0.5rem; align-items:center; }
 
-/* Grid: three small cards per row, left aligned */
+/* Grid: fluid, left-aligned but never wider than container */
 .dict-grid {
   display:grid;
   gap:0.75rem;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items:start;
 
-  /* constrain width and align to the left of the container */
-  max-width: 960px;      /* adjust to taste; keeps three columns comfortably */
-  margin: 0  auto 0 0;   /* top/right/bottom/left -> right auto pushes grid to the left */
+  /* make grid fill the container without forcing extra width */
+  width: 100%;
+  max-width: 100%;
+  margin: 0; /* remove right auto that caused extra whitespace */
   box-sizing: border-box;
+  padding: 0;
 }
 
 /* tablet */
 @media (max-width:1000px) {
-  .dict-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 720px; }
+  .dict-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 /* mobile */
 @media (max-width:640px) {
-  .dict-grid { grid-template-columns: 1fr; max-width: 100%; margin-right: 0; }
+  .dict-grid { grid-template-columns: 1fr; }
 }
 
-.card.section { padding:0.75rem; }
+/* card wrapper */
+.card.section { padding:0.75rem; box-sizing: border-box; }
+
+/* ensure herb cards themselves are fluid */
+HerbCard, .herb-card, .card { width: 100%; max-width: 100%; box-sizing: border-box; }
+
+/* images must not overflow */
+img { max-width: 100%; height: auto; display: block; object-fit: cover; }
+
+/* utility */
 .muted { color:var(--muted); margin-top:0.75rem; }
+
+/* debug helper (temporary) - uncomment to find overflow sources */
+/*
+:global(*) { outline: 1px dashed rgba(255,0,0,0.06); }
+*/
 </style>
