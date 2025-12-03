@@ -1,5 +1,5 @@
 <script>
-  export let imageSrc = "";
+  export let imageSrc = "./assets/anxietyThumb.jpeg";
   export let imageAlt = "Picture for article";
   export let shortDescription = "Short description";
   export let quizPrompt = "One line for quiz";

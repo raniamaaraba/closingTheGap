@@ -223,10 +223,12 @@
     --accent: var(--accent, #2f6f6b);
     --muted: var(--muted, #6b7280);
     --primary: var(--primary, #8B5E3C);
+    --title-font: "Lavishly Yours", cursive;
+    --body-font: "Special Elite", "Courier New", monospace;
   }
 
-  .quiz { padding: 1rem; max-width: 820px; margin: 0 auto; }
-  .header-row { display:flex; justify-content:space-between; align-items:center; gap:1rem; }
+  .quiz { padding: 1rem; max-width: 820px; margin: 0 auto; font-family: var(--body-font);}
+  .header-row { display:flex; justify-content:space-between; align-items:center; gap:1rem;font-family: var(--body-font); }
   .quiz-header h1 { margin: 0 0 0.25rem 0; font-family: var(--title-font); font-size: 2rem; color: var(--primary); }
   .header-actions { display:flex; gap:0.5rem; align-items:center; }
   .close-btn { background:transparent; border:1px solid var(--card-border, #e5e7eb); padding:0.35rem 0.6rem; border-radius:8px; cursor:pointer; color:var(--muted); }
@@ -242,49 +244,49 @@
 
   .options { list-style: none; padding: 0; margin: 0 0 1rem 0; display: grid; gap: 0.5rem; }
   .checkbox { display:flex; align-items:center; gap:0.75rem; cursor:pointer; padding:0.5rem; border-radius:8px; transition: background .12s ease; }
-.checkbox input { position:absolute; opacity:0; width:0; height:0; pointer-events:none; }
+  .checkbox input { position:absolute; opacity:0; width:0; height:0; pointer-events:none; }
 
-/* visible box */
-.box {
-  width:22px;
-  height:22px;
-  border-radius:6px;
-  border:1px solid var(--card-border, #e5e7eb);
-  background: #fff;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  transition: background .18s ease, border-color .18s ease, transform .12s ease;
-  flex: 0 0 22px;
-}
+  /* visible box */
+  .box {
+    width:22px;
+    height:22px;
+    border-radius:6px;
+    border:1px solid var(--card-border, #e5e7eb);
+    background: #fff;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    transition: background .18s ease, border-color .18s ease, transform .12s ease;
+    flex: 0 0 22px;
+  }
 
-/* hidden by default; will be shown when input is checked */
-.check {
-  width:14px;
-  height:14px;
-  color: white;
-  opacity: 0;
-  transform: scale(0.6) rotate(-10deg);
-  transition: opacity .18s ease, transform .18s cubic-bezier(.2,.9,.2,1);
-}
+  /* hidden by default; will be shown when input is checked */
+  .check {
+    width:14px;
+    height:14px;
+    color: white;
+    opacity: 0;
+    transform: scale(0.6) rotate(-10deg);
+    transition: opacity .18s ease, transform .18s cubic-bezier(.2,.9,.2,1);
+  }
 
-/* when the input is checked, style the box and reveal the check */
-.checkbox input:checked + .box {
-  background: linear-gradient(180deg, var(--accent), var(--primary));
-  border-color: transparent;
-  transform: translateY(-1px);
-}
-.checkbox input:checked + .box .check {
-  opacity: 1;
-  transform: scale(1) rotate(0deg);
-}
+  /* when the input is checked, style the box and reveal the check */
+  .checkbox input:checked + .box {
+    background: linear-gradient(180deg, var(--accent), var(--primary));
+    border-color: transparent;
+    transform: translateY(-1px);
+  }
+  .checkbox input:checked + .box .check {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
 
-/* subtle hover/focus states */
-.checkbox:hover { background: rgba(0,0,0,0.02); }
-.checkbox:focus-within { outline: 2px solid rgba(47,111,107,0.12); border-radius:8px; }
+  /* subtle hover/focus states */
+  .checkbox:hover { background: rgba(0,0,0,0.02); }
+  .checkbox:focus-within { outline: 2px solid rgba(47,111,107,0.12); border-radius:8px; }
 
-/* label text */
-.label-text { font-size: 1rem; color: var(--ink, #1f2937); }
+  /* label text */
+  .label-text { font-size: 1rem; color: var(--ink, #1f2937); }
 
   .controls { display:flex; justify-content:space-between; align-items:center; gap:1rem; margin-top: 0.5rem; }
   .nav-arrows { display:flex; gap:0.5rem; align-items:center; }
@@ -301,8 +303,8 @@
   .result-item { padding: 0.6rem; border-radius: 8px; background: #fff; border: 1px solid var(--card-border, #e5e7eb); }
 
   .results-actions { display:flex; gap:0.5rem; justify-content:flex-end; margin-top: 0.75rem; }
-  .btn { background: var(--accent); color: #fff; border: none; padding: 0.5rem 0.9rem; border-radius: 8px; cursor: pointer; }
-  .btn.secondary { background: transparent; color: var(--accent); border: 1px solid var(--card-border, #e5e7eb); }
+  .btn { background: var(--accent); color: #fff; border: none; padding: 0.5rem 0.9rem; border-radius: 8px; cursor: pointer;font-family: var(--body-font); }
+  .btn.secondary { background: transparent; color: var(--accent); border: 1px solid var(--card-border, #e5e7eb);font-family: var(--body-font); }
 
   @media (max-width: 700px) {
     .quiz { padding: 0.75rem; }

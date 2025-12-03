@@ -1,146 +1,112 @@
+/* =========================
+   Toffee Fudge Theme Variables
+   ========================= */
 :root {
-  --bg: #fffdf8;
-  --ink: #1f2937;
-  --muted: #6b7280;
-  --accent: #2f6f6b;
-  --border: #e5e7eb;
-  --card: #ffffff;
-  --shadow: 0 8px 24px rgba(0,0,0,0.08);
-  --title-font: "Lavishly Yours", cursive;
-}
+  /* neutrals */
+  --bg: #fff7f2;               /* warm cream page background */
+  --surface: #ffffff;          /* card and panel surfaces */
+  --ink: #1f2326;              /* primary readable text */
+  --muted: #6b5b50;            /* secondary text */
 
+  /* toffee fudge palette */
+  --toffee-1: #8B5E3C;         /* deep toffee */
+  --toffee-2: #C9A77A;         /* warm sand */
+  --fudge-1: #6B3A2A;          /* fudge dark */
+  --fudge-2: #D9CFC6;          /* pale warm neutral */
+  --blush-1: #F7D7DE;          /* soft blush */
+  --blush-2: #E76A9A;          /* vivid rose accent */
 
-
-/* Palette variables */
-:root {
-  /*colors impelemented from copiloit to match the given image in the design process
-  --bg: #fffdf8;
-  --surface: #ffffff;
-  --muted: #6b7280;
-  --ink: #1f2937;
-  --border: #e5e7eb;
-  --shadow: 0 8px 24px rgba(0,0,0,0.08);
-
-  --toffee-1: #8B5E3C; /* Fired Earth Toffee */
-  --toffee-2: #C9A77A; /* Rolling Fog / warm neutral */
-  --toffee-3: #7A3B2E; /* Rouge II / deep accent */
-  --toffee-4: #EDE2D6; /* String / light neutral */
-  --toffee-5: #6B3A2A; /* Chestnut / dark warm */
-  --toffee-6: #D9CFC6; /* Marble Hall / pale */
-
-  --rum-1: #6E2F3D; /* Nether Red / raisin tone */
-  --rum-2: #7F5A8A; /* Brassica / muted purple */
-  --rum-3: #5A2E36; /* Edward Bulmer Raisin / deep */
-  --rum-4: #BFA6A8; /* Mylands FTT-005 / muted neutral */
-  --rum-5: #A14B4B; /* Rouge II variant */
-  --rum-6: #5C2F2A; /* Rum & Raisin deep */
-
-  --heather-1: #8A6FA3; /* Heather / amethyst */
-  --heather-2: #6B8FBF; /* Mineral blue */
-  --heather-3: #B9A7C9; /* soft lavender */
-  --heather-4: #4A5F7A; /* muted blue-gray */
-  --heather-5: #E9E6F0; /* pale wash */
-
-  --primary: var(--toffee-1);       /* main accent */
-  --primary-contrast: var(--toffee-4);
-  --accent: var(--rum-2);          /* secondary accent */
-  --accent-contrast: var(--rum-4);
-  --alt-accent: var(--heather-2);  /* alternate accent for sections */
-
-  --card-bg: var(--surface);
-  --card-border: var(--border);
-  --link: var(--accent);
-  --button-bg: var(--primary);
-  --button-text: #fff;
-  --badge-bg: #f1f8f7;
-  --badge-text: var(--primary);
-}
-
-
-/* Links and interactive accents */
-a, .link {
-  color: var(--link);
-}
-
-a:hover, .link:hover {
-  color: var(--alt-accent);
-}
-
-/* Buttons */
-.btn {
-  background: var(--button-bg);
-  color: var(--button-text);
-  border: 1px solid rgba(0,0,0,0.06);
-}
-.btn.secondary {
-  background: var(--accent);
-  color: var(--button-text);
-}
-
-/* Cards and panels */
-.card {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  box-shadow: var(--shadow);
-}
-
-/* Badges */
-.badge {
-  background: var(--badge-bg);
-  color: var(--badge-text);
-  border-radius: 999px;
-  padding: 0.15rem 0.5rem;
-}
-
-/* Directory card accents */
-.dir-card {
-  border-color: rgba(0,0,0,0.06);
-}
-.dir-title a {
-  color: var(--primary);
-}
-.dir-card:hover .dir-title a {
-  color: var(--alt-accent);
-}
-
-/* Optional: theme switch helper classes */
-.theme-warm {
+  /* accents */
   --primary: var(--toffee-1);
-  --accent: var(--rum-2);
-  --alt-accent: var(--heather-2);
+  --primary-contrast: var(--fudge-2);
+  --accent: var(--blush-2);
+  --accent-soft: var(--blush-1);
+  --alt-accent: #7F5A8A;      /* heather/purple for variety */
+
+  /* UI tokens */
+  --card-border: rgba(0,0,0,0.06);
+  --shadow: 0 12px 30px rgba(20,20,20,0.06);
+
+  /* fonts */
+  --title-font: "Lavishly Yours", cursive;
+  --body-font: "Special Elite", "Courier New", monospace;
+
+  /* layout */
+  --container-max: 1100px;
+  --gutter: 1rem;
 }
-.theme-cool {
-  --primary: var(--heather-2);
-  --accent: var(--heather-1);
-  --alt-accent: var(--toffee-2);
-}
 
-
-
-* { box-sizing: border-box; }
-html, body { height: 100%; }
-body {
+/* =========================
+   Global Reset and Base
+   ========================= */
+/* Svelte-safe global rules */
+:global(html), :global(body) {
   margin: 0;
-  font-family: 'Times New Roman', Times, serif;
-  color: var(--ink);
+  padding: 0;
+  min-height: 100vh;
+  box-sizing: border-box;
   background: var(--bg);
+  color: var(--ink);
+  font-family: var(--body-font);
+  font-size: 16px;
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
+/* Ensure inheritance across components */
+:global(body), :global(p), :global(li), :global(span),
+:global(input), :global(button), :global(textarea), :global(a) {
+  font-family: var(--body-font);
+  color: var(--ink);
+}
+
+/* Headings use title font */
+:global(h1), :global(h2), :global(h3), :global(.title), :global(.site-title) {
+  font-family: var(--title-font);
+  color: var(--toffee-1);
+  margin: 0;
+}
+
+/* Images and media */
+:global(img), :global(video), :global(iframe), :global(svg) {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Links */
+:global(a), :global(.link) {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color .16s ease, transform .12s ease;
+}
+:global(a:hover), :global(.link:hover) {
+  color: var(--accent-soft);
+  transform: translateY(-1px);
+}
+
+/* =========================
+   Layout and Containers
+   ========================= */
 .container {
-  max-width: 1100px;
+  width: 100%;
+  max-width: var(--container-max);
   margin: 0 auto;
-  padding: 1rem;
+  padding: var(--gutter);
+  box-sizing: border-box;
 }
 
+/* Sticky header */
 .header {
   position: sticky;
   top: 0;
-  z-index: 20;
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
+  z-index: 40;
+  background: linear-gradient(90deg, rgba(139,94,60,0.03), rgba(231,106,154,0.02));
+  border-bottom: 1px solid var(--card-border);
 }
-
 .header-inner {
   display: grid;
   grid-template-columns: 1fr auto 48px;
@@ -149,117 +115,205 @@ body {
   padding: 0.5rem 1rem;
 }
 
-.title h1 {
-  margin: 0; 
-  font-family: "Lavishly Yours", cursive;
-  color: var(--primary);
-  font-family: var(--title-font);
-  font-weight: 400;            
-  line-height: 1.1;            
-}
-.subtitle { color: var(--muted); font-size: 0.9rem; }
-
-.main {
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 1rem;
-  padding: 1rem;
-}
-
-html { scroll-behavior: smooth; }
-
-.section + .section {
-  margin-top: 0.75rem;
-}
-
-.card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  box-shadow: var(--shadow);
-}
-
-.section { padding: 0.75rem; }
-.section h2 { margin: 0 0 0.5rem 0; font-size: 1.1rem; }
-
-.sticky-notes {
-  display: grid;
-  gap: 0.75rem;
-  grid-template-columns: 1fr 1fr;
-  margin: 1rem 0;
-}
-.sticky {
-  background: #fff6bf;
-  border: 1px solid #f1e27a;
-  border-radius: 8px;
-  padding: 0.5rem 0.75rem;
-  color: #7a6c2b;
-  box-shadow: 2px 4px 12px rgba(0,0,0,0.08);
-  font-size: 0.95rem;
-}
-.sticky small { display: block; margin-top: 0.25rem; color: #8c7d3a; }
-
-.footer {
-  border-top: 1px solid var(--border);
-  color: var(--muted);
-  font-size: 0.9rem;
-  padding: 1rem;
-  margin-top: 1rem;
-}
-/* Site header sizing variables (tweak these to taste) */
-:root {
-  --site-header-size: 3rem;        /* desktop main title size */
-  --site-subheader-size: 1.15rem;  /* subtitle size */
-  --section-heading-size: 1.4rem;  /* h2 / section headings */
-  --site-header-line-height: 1.02;
-}
-
-/* Primary site title used in headers */
+/* Title sizing */
 .title h1,
 .header-inner .title h1,
-.header h1,
 .page-header h1 {
-  font-size: var(--site-header-size) !important;
-  line-height: var(--site-header-line-height);
+  font-size: 2.6rem;
+  line-height: 1.02;
   font-weight: 700;
   letter-spacing: -0.02em;
-  margin: 0;
-  font-family: var(--title-font), "Times New Roman", serif;
+  color: var(--toffee-1);
 }
 
-/* Secondary headings used across pages */
-.section h2,
-.dir-heading,
-h2 {
-  font-size: var(--section-heading-size);
-  font-weight: 700;
-  margin: 0 0 0.5rem 0;
-}
+/* Subtitle */
+.subtitle { color: var(--muted); font-size: 0.95rem; }
 
-/* Subtitles and smaller header text */
-.subtitle,
-.header .subtitle,
-.page-subtitle {
-  font-size: var(--site-subheader-size);
-  color: var(--muted);
+/* Main layout */
+.main {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 1rem;
+  padding: 1rem 0;
 }
-
-/* Fluid scaling for smaller screens */
 @media (max-width: 1000px) {
-  :root {
-    --site-header-size: 2.4rem;
-    --section-heading-size: 1.2rem;
-    --site-subheader-size: 1rem;
-  }
+  .main { grid-template-columns: 1fr; }
+}
+
+/* Section spacing */
+.section { padding: 0.75rem; }
+.section + .section { margin-top: 0.75rem; }
+
+/* =========================
+   Components and Cards
+   ========================= */
+/* Card base */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  box-sizing: border-box;
+}
+
+/* Card accent bar for visual identity */
+.card::before {
+  content: "";
+  display: block;
+  height: 6px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--toffee-2) 60%, var(--alt-accent) 100%);
+  margin: -0.75rem -0.75rem 0 -0.75rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: 10px;
+  background: linear-gradient(180deg, var(--accent) 0%, var(--accent-soft) 100%);
+  color: #fff;
+  border: 1px solid rgba(0,0,0,0.06);
+  cursor: pointer;
+}
+.btn.secondary {
+  background: linear-gradient(180deg, var(--primary), var(--toffee-2));
+  color: #fff;
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  font-size: 0.85rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(231,106,154,0.06), rgba(139,94,60,0.03));
+  color: var(--primary);
+  border: 1px solid var(--card-border);
+}
+
+/* Modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index: 60;
+  padding: 1rem;
+}
+.modal {
+  width: 100%;
+  max-width: 920px;
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+  border: 1px solid var(--card-border);
+  overflow: auto;
+  max-height: calc(100vh - 3rem);
+}
+
+/* =========================
+   Directory Grid and Herb Cards
+   ========================= */
+.dir-heading {
+  margin: 0 0 0.75rem 0;
+  font-family: var(--title-font);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* responsive grid */
+.dir-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  width: 100%;
+  box-sizing: border-box;
+}
+@media (max-width: 1000px) {
+  .dir-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 640px) {
-  :root {
-    --site-header-size: 1.8rem;
-    --section-heading-size: 1.05rem;
-    --site-subheader-size: 0.95rem;
-  }
-
-  /* keep header layout tidy on very small screens */
-  .header-inner { padding: 0.5rem; grid-template-columns: 1fr auto 40px; }
+  .dir-grid { grid-template-columns: 1fr; }
 }
 
+/* herb card */
+.dir-card {
+  background: var(--surface);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .12s ease, box-shadow .12s ease;
+  width: 100%;
+}
+.dir-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(107,58,42,0.08); }
+
+/* media */
+.dir-media {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--fudge-2), var(--blush-1));
+}
+.dir-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* body */
+.dir-body { padding: 0.85rem; display:flex; flex-direction:column; gap:0.5rem; }
+.dir-title { margin: 0; font-size: 1.02rem; line-height: 1.25; color: var(--toffee-1); }
+.dir-title a { color: var(--toffee-1); text-decoration: none; font-weight: 600; }
+.dir-title a:hover { text-decoration: underline; }
+.dir-desc { margin: 0; color: var(--muted); font-size: 0.95rem; line-height: 1.35; }
+
+/* herb meta */
+.herb-card .meta h3 { color: var(--toffee-1); }
+.herb-card .meta p { color: var(--muted); }
+
+/* tincture box */
+.tincture-box {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(139,94,60,0.03), rgba(231,106,154,0.02));
+  border: 1px solid rgba(139,94,60,0.06);
+}
+.tincture-title { color: var(--fudge-1); font-weight: 700; }
+.tincture-safety { color: #7a1f1f; font-weight: 700; }
+
+/* =========================
+   Utilities and Accessibility
+   ========================= */
+/* container safety */
+.container, .center, .right-panel { box-sizing: border-box; }
+
+/* focus states */
+:focus { outline: none; }
+:global(a:focus), :global(button:focus), .dir-card:focus-within {
+  outline: 3px solid rgba(127,90,138,0.12);
+  outline-offset: 2px;
+}
+
+/* readable small text */
+.muted { color: var(--muted); font-size: 0.95rem; }
+
+/* utility color helpers */
+.u-toffee { color: var(--toffee-1) !important; }
+.u-blush { color: var(--accent) !important; }
+.bg-toffee { background: linear-gradient(90deg, rgba(139,94,60,0.06), rgba(201,167,122,0.03)); }
+
+/* prevent overflow from long words */
+:global(*) { word-wrap: break-word; }
+
+/* debug helper (comment out in production) */
+/*
+:global(body) > * { outline: 1px dashed rgba(0,0,0,0.04); }
+*/
