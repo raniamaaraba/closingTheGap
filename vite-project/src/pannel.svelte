@@ -1,110 +1,177 @@
 <script>
+  
   import { createEventDispatcher } from "svelte";
-  export let recentPages = [];
   export let afterQuizArticles = [];
+
+  export let externalResources = [
+    { title: "What does the Bible say about Medicine?", href: "https://www.openbible.info/topics/medicine" },
+    { title: "Cincinnati Apothocary Store", href: "https://nativemoonherbals.com/" },
+    { title: "Calhoun Farms - Salves & Tinktures", href: "https://calhounfarmstead.com/"}
+  ];
 
   const dispatch = createEventDispatcher();
 
-  // Programmatic nav for regular Svelte SPA
+  // Programmatic nav for regular Svelte SPA with safe modifier handling and fallback
   function nav(url, e) {
-    // allow normal open-in-new-tab / ctrl/cmd+click
     if (e && (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1)) return;
     e?.preventDefault();
-
-    // push state and notify listeners
-    window.history.pushState({}, "", url);
-    window.dispatchEvent(new PopStateEvent("popstate"));
+    try {
+      window.history.pushState({}, "", url);
+      window.dispatchEvent(new PopStateEvent("popstate"));
+      console.log('nav pushState ->', url);
+    } catch (err) {
+      console.warn('pushState failed, falling back to full navigation', err);
+      window.location.assign(url);
+    }
   }
 
-  // optional: notify parent if needed
+  // More explicit goTo for the Herbs button (logs and notifies parent)
+  function goTo(path, e) {
+    // allow normal open-in-new-tab / modifier clicks
+    if (e && (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1)) return;
+    e?.preventDefault();
+    console.log('goTo clicked:', path);
+    try {
+      window.history.pushState({}, "", path);
+      window.dispatchEvent(new PopStateEvent("popstate"));
+      dispatch("openDictionary");
+    } catch (err) {
+      console.warn('goTo pushState failed, falling back', err);
+      window.location.assign(path);
+    }
+  }
+
   function notifyOpenDictionary() { dispatch("openDictionary"); }
 </script>
 
 <aside class="card section side-panel" aria-label="Side panel">
-  <h2>Side panel</h2>
+  <h2 class="sr-only">Side panel</h2>
 
+  <!-- Navigation header -->
+  <div class="nav-intro" aria-hidden="false">
+    <h3 class="nav-title">Navigation</h3>
+  </div>
+
+  <!-- Primary shortcuts (stacked) -->
   <nav class="nav-icons" aria-label="Primary shortcuts">
     <a class="icon-btn" href="/quiz" title="Quiz" aria-label="Quiz" on:click={(e) => nav('/quiz', e)}>Quiz</a>
     <a class="icon-btn" href="/articles" title="Articles" aria-label="Articles" on:click={(e) => nav('/articles', e)}>Articles</a>
-    <a class="icon-btn" href="/dictionary" title="Herbal Dictionary" aria-label="Herbal Dictionary" on:click={(e) => nav('/dictionary', e)}>Herbs</a>
-    </nav>
 
+    <!-- Herbs uses goTo which dispatches openDictionary and logs -->
+    <a
+      class="icon-btn"
+      href="/directory"
+      title="Herbal Dictionary"
+      aria-label="Herbal Dictionary"
+      on:click={(e) => goTo('/directory', e)}
+    >
+      Herbs
+    </a>
+  </nav>
 
-  <div class="group">
-    <h3>Recent pages</h3>
-    <ul>
-      {#each recentPages as p}
-        <li><a href={p.href}>{p.title}</a></li>
+  <!-- External resources (no arrows) -->
+  <div class="group resources">
+    <h3>External resources</h3>
+    <ul class="dash-list">
+      {#each externalResources as r}
+        <li>
+          <a class="external-link" href={r.href} target="_blank" rel="noopener noreferrer">
+            {r.title}
+          </a>
+        </li>
       {/each}
-      {#if recentPages.length === 0}
-        <li class="muted">No recent pages yet</li>
-      {/if}
-    </ul>
-  </div>
-
-  <div class="group">
-    <h3>Quick access after quiz</h3>
-    <ul>
-      {#each afterQuizArticles as a}
-        <li><a href={a.href}>{a.title}</a></li>
-      {/each}
-      {#if afterQuizArticles.length === 0}
-        <li class="muted">Complete the quiz to unlock targeted articles</li>
+      {#if externalResources.length === 0}
+        <li class="muted">No external resources available</li>
       {/if}
     </ul>
   </div>
 </aside>
 
 <style>
-.icon-btn {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-width: 88px;           /* keeps consistent button width */
-  height:36px;
-  padding: 0 0.6rem;
-  border-radius:8px;
-  border:1px solid var(--border);
-  background: var(--card-bg);
-  box-shadow: var(--shadow);
-  text-decoration:none;
-  font-size:0.95rem;
-  color: var(--accent);
-  font-weight:600;
-  transition: filter .12s ease, transform .12s ease;
-}
+  :root {
+    --title-font: var(--title-font, "Lavishly Yours", cursive);
+    --body-font: var(--body-font, "Special Elite", "Courier New", monospace);
+  }
 
-.icon-btn:hover,
-.icon-btn:focus {
-  filter: brightness(1.05);
-  transform: translateY(-2px);
-  outline: none;
-}
+  .side-panel {
+    padding: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: var(--body-font);
+  }
 
-/* keep spacing between the buttons */
-.nav-icons { display:inline-flex; gap:0.5rem; margin-bottom:0.75rem; }
+  .card.section {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 0.75rem;
+    border-radius: 10px;
+  }
 
-.side-panel { padding: 0.5rem; display:flex; flex-direction:column; gap:1rem; }
-.card.section { background:var(--card-bg); border:1px solid var(--card-border); padding:0.75rem; border-radius:10px; }
-.icon-btn{ display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:8px; border:1px solid var(--border); background:var(--card-bg); box-shadow:var(--shadow); text-decoration:none; font-size:1.1rem; color:var(--accent); }
-.icon-btn:hover{filter:brightness(1.05)}
-.nav-icons { display: inline-flex; gap: 0.5rem; margin-bottom: 0.75rem; }
-.group h3 { margin: 0.5rem 0; font-size: 1rem; color: var(--accent); }
-.group ul { margin: 0; padding-left: 1.1rem; }
-.muted { color: var(--muted); }
+  /* Primary shortcuts stacked vertically */
+  .nav-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 0;
+    align-items: stretch;
+    justify-content: flex-start;
+  }
 
+  /* full-width buttons, one per line */
+  .icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 44px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    box-shadow: var(--shadow);
+    text-decoration: none;
+    font-size: 0.95rem;
+    color: var(--accent);
+    font-weight: 700;
+    transition: transform .12s ease, filter .12s ease;
+    padding: 0 0.75rem;
+    text-align: left;
+  }
+  .icon-btn:hover,
+  .icon-btn:focus {
+    transform: translateY(-3px);
+    filter: brightness(1.05);
+    outline: none;
+  }
 
+  /* External resources: dash list */
+  .resources ul { margin: 0; padding-left: 1rem; }
 
-.btn {
-  background:var(--accent); color:#fff; border:none; padding:0.4rem 0.6rem; border-radius:8px; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:0.4rem;
-}
-.btn[disabled] { opacity:0.6; cursor:not-allowed; }
-.badge { display:inline-block; font-size:0.8rem; padding:0.15rem 0.5rem; border-radius:999px; border:1px solid var(--border); background:#f1f8f7; color:var(--accent); }
+  /* dash-list: replace bullets with em-dash */
+  .dash-list { list-style: none; margin: 0; padding-left: 1rem; }
+  .dash-list li { position: relative; padding-left: 1.05rem; margin-bottom: 0.35rem; line-height: 1.3; }
+  .dash-list li::before { content: "—"; position: absolute; left: 0; top: 0; color: var(--muted); font-weight: 600; font-family: var(--body-font); line-height: 1; }
 
-/* recommended list */
-.after-quiz ul { margin:0.4rem 0 0 1rem; padding:0; }
-.after-quiz li { margin-bottom:0.25rem; }
+  .external-link {
+    color: var(--ink, #1f2937);
+    text-decoration: none;
+    font-family: var(--body-font);
+    display: inline-flex;
+    gap: 0.35rem;
+    align-items: center;
+  }
+  .external-link:hover { text-decoration: underline; color: var(--accent); }
 
-/* small utility for screen-reader-only text */
-.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+  /* Muted text */
+  .muted { color: var(--muted); font-family: var(--body-font); }
+
+  /* Accessibility helper */
+  .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+
+  /* Responsive tweaks */
+  @media (max-width: 640px) {
+    .icon-btn { height: 42px; }
+  }
 </style>

@@ -12,7 +12,7 @@
     "/": Home,
     "/articles": Articles,
     "/quiz": Quiz,
-    "/dictionary": Dictionary
+    "/directory": Dictionary
   };
 
   // current route path
