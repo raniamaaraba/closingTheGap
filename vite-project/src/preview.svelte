@@ -1,22 +1,33 @@
 <script>
-  export let imageSrc = "./assets/anxietyThumb.jpeg";
+  export let imageSrc = "/assets/anxietyThumb.jpeg";
   export let imageAlt = "Picture for article";
   export let shortDescription = "Short description";
   export let quizPrompt = "One line for quiz";
   export let articleHref = "#";
+  let imgError = false;
+  function handleImgError() {
+    imgError = true;
+  }
+
 </script>
 
-<article class="card section">
-  <h2 id="article">Closing the Gap</h2>
+<article class="card section" aria-labelledby="article-title">
+  <h2 id="article-title">Closing the Gap</h2>
   <p class="muted">shuffling verses</p>
 
   <div class="preview">
-    <figure class="media">
-      {#if imageSrc}
-        <img src={imageSrc} alt={imageAlt} />
-      {:else}
-        <div class="placeholder">Picture for article</div>
-      {/if}
+    <figure class="media" aria-hidden={imgError ? "true" : "false"}>
+      <!-- hard-set image (no conditional) -->
+      <img
+        src={imageSrc}
+        alt={imageAlt}
+        loading="lazy"
+        on:error={handleImgError}
+        width="640"
+        height="360"
+        decoding="async"
+      />
+      <figcaption class="sr-only">{imageAlt}</figcaption>
     </figure>
 
     <div class="info">
