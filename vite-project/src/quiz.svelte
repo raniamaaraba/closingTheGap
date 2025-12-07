@@ -1,17 +1,20 @@
 <script>
-  import { onMount } from "svelte";
+  import { onMount, createEventDispatcher } from "svelte";
+  import HomeButton from "./homeButton.svelte";
+
+  const dispatch = createEventDispatcher();
 
   const questions = [
     {
       id: "q1",
       title: "Which symptoms are you experiencing?",
-      hint: "Pich which you feel is the strongs or would like to work on the most.",
+      hint: "Pick which you feel is the strongest or would like to work on the most.",
       options: [
         { id: "q1a", label: "ADHD (Attention-deficit/hyperactivity Disorder)" },
-        { id: "q1b", label: "OCD (Obsessive Compulsvie Disorder)" },
+        { id: "q1b", label: "OCD (Obsessive Compulsive Disorder)" },
         { id: "q1c", label: "Depression or Bipolar Disorder" },
         { id: "q1d", label: "Generalised Anxiety Disorder" },
-        { id: "q1e", label: "Lust and Birth Controll"}
+        { id: "q1e", label: "Lust and Birth Control" }
       ]
     },
     {
@@ -23,7 +26,7 @@
         { id: "q3b", label: "Over the counter supplements" },
         { id: "q3c", label: "Herbal remedies" },
         { id: "q3d", label: "None" },
-        { id: "q3e", label: "All of the Above"}
+        { id: "q3e", label: "All of the Above" }
       ]
     },
     {
@@ -39,38 +42,45 @@
     }
   ];
 
-  const recommendations = {
-    q1a: ["article:focus-basics"],
-    q1b: ["article:ocd-overview"],
-    q1c: ["article:depression-care"],
-    q1d: ["article:anxiety-relief"],
-    q2a: ["Try gentle lifestyle changes; monitor progress."],
-    q2b: ["Consider a consult with a clinician; combine lifestyle and remedies."],
-    q2c: ["Seek professional care; use supportive remedies under guidance."],
-    q3a: ["Be mindful of interactions; consult before adding herbs."],
-    q3b: ["Track supplements and discuss with your provider."],
-    q3c: ["We have tincture guides and safety notes."],
-    q3d: ["Natural options and lifestyle changes may help."],
-    q4a: ["Sleep hygiene checklist; herbal sleep aids."],
-    q4b: ["Dietary tips for mood and focus."],
-    q4c: ["Exercise routines that support mental health."],
-    q4d: ["Breathing, journaling, and routine practices."],
-    q5a: ["See our quick tincture recipes and safety notes."],
-    q5b: ["Short habit plans and trackers."],
-    q5c: ["Curated articles based on your answers."],
-    q5d: ["Encouraging verses and spiritual resources."]
+  const tinctures = [
+    { id: "ashwagandha", name: "Ashwagandha (tincture)", uses: ["Stress resilience", "Adaptogen support"] },
+    { id: "bacopa", name: "Bacopa (tincture)", uses: ["Cognitive support", "Memory", "Attention"] },
+    { id: "rhodiola", name: "Rhodiola (tincture)", uses: ["Mental stamina", "Fatigue", "Adaptogen for focus"] },
+    { id: "chamomile", name: "Chamomile (tincture/balm)", uses: ["Anxiety", "Gentle calming", "Sleep support"] },
+    { id: "valerian", name: "Valerian (tincture)", uses: ["Sleep support", "Sedative adjunct"] },
+    { id: "saffron", name: "Saffron (extract/tincture)", uses: ["Mood support"] },
+    { id: "milkthistle", name: "Milk thistle (tincture)", uses: ["Liver support", "Hormone metabolism"] },
+    { id: "vitex", name: "Vitex (Chasteberry) tincture", uses: ["Cycle regularity", "Hormone balance"] },
+    { id: "passionflower", name: "Passionflower (tincture)", uses: ["Acute anxiety", "Insomnia"] },
+    { id: "milky-oats", name: "Milky oats (Avena) balm/tincture", uses: ["Nervine tonic", "Burnout"] }
+  ];
+
+  const articleTitles = {
+    "birth-control-and-lust": "Birth Control and Sexual Desire",
+    "adhd": "ADHD (Attention‑Deficit/Hyperactivity Disorder)",
+    "ocd": "OCD (Obsessive‑Compulsive Disorder)",
+    "depression": "Depression",
+    "bipolar-disorder": "Bipolar Disorder",
+    "anxiety": "Anxiety",
+    "sleep-disturbances": "Sleep Disturbances",
+    "chronic-pain": "Chronic Pain"
+  };
+
+  const profileMap = {
+    adhd: { label: "Focus & Attention", tinctures: ["bacopa","rhodiola"], articles: ["adhd"] },
+    ocd: { label: "Obsessive Patterns & Calm", tinctures: ["chamomile","passionflower"], articles: ["ocd"] },
+    mood: { label: "Mood Support", tinctures: ["saffron","ashwagandha"], articles: ["depression"] },
+    anxiety: { label: "Anxiety & Stress", tinctures: ["ashwagandha","chamomile","passionflower","milky-oats"], articles: ["anxiety"] },
+    hormone: { label: "Hormone Support", tinctures: ["milkthistle","vitex"], articles: ["birth-control-and-lust"] }
   };
 
   let step = 0;
   let answers = {};
-  let lastAction = "";          // shows which button was clicked
-  let activeNav = null;         // "prev" | "next" | "submit" | "close" for visual active state
-
-  onMount(() => {
-    // nothing special for now
-  });
+  let lastAction = "";
+  let activeNav = null;
 
   function toggle(optionId) {
+    // multi-select behavior preserved; clicking toggles selection
     if (answers[optionId]) delete answers[optionId];
     else answers[optionId] = true;
     answers = { ...answers };
@@ -79,7 +89,6 @@
   function setLastAction(action) {
     lastAction = action;
     activeNav = action.toLowerCase();
-    // clear active state after a short delay so user sees the press
     setTimeout(() => { activeNav = null; }, 300);
   }
 
@@ -105,28 +114,52 @@
 
   function closeToHome() {
     setLastAction("Close");
-    // navigate to homepage and notify SPA router
     window.history.pushState({}, "", "/");
     window.dispatchEvent(new PopStateEvent("popstate"));
   }
 
   $: progress = Math.round((step / questions.length) * 100);
   $: selectedOptionIds = Object.keys(answers);
-  $: resultItems = Array.from(new Set(selectedOptionIds.flatMap(id => recommendations[id] ?? [])));
+
+  function mapAnswersToProfiles(selectedIds) {
+    const set = new Set();
+    selectedIds.forEach(id => {
+      if (id === "q1a") set.add("adhd");
+      if (id === "q1b") set.add("ocd");
+      if (id === "q1c") set.add("mood");
+      if (id === "q1d") set.add("anxiety");
+      if (id === "q1e") set.add("hormone");
+    });
+    if (set.size === 0) set.add("anxiety");
+    return Array.from(set);
+  }
+
+  $: profiles = mapAnswersToProfiles(selectedOptionIds);
+  $: recs = profiles.map(p => {
+    const map = profileMap[p];
+    if (!map) return null;
+    return {
+      profile: p,
+      label: map.label,
+      tinctures: map.tinctures.map(id => tinctures.find(t => t.id === id)).filter(Boolean),
+      articles: map.articles.map(aid => ({ id: aid, title: articleTitles[aid] })).filter(Boolean)
+    };
+  }).filter(Boolean);
+
 </script>
 
 <section class="quiz container" aria-labelledby="quiz-title">
-  <header class="quiz-header">
+  <header class="quiz-header card">
     <div class="header-row">
-      <h1 id="quiz-title">Diagnosis Quiz</h1>
-      <div class="header-actions">
-        <button class="btn close-btn" on:click={closeToHome} aria-label="Close and return home">
-          ✕ Close
-        </button>
+      <div>
+        <h1 id="quiz-title">Diagnosis Quiz</h1>
+        <p class="support">The Lord sees you and you are heard — thank you for taking this step toward better health.</p>
+      </div>
+
+      <div class="header-controls" style="display:flex; gap:0.5rem; align-items:center;">
+        <HomeButton />
       </div>
     </div>
-
-    <p class="support">The Lord sees you and you are Heard — thank you for taking this step toward better health.</p>
 
     <div class="progress" aria-hidden="true">
       <div class="progress-bar" style="width: {progress}%"></div>
@@ -135,30 +168,26 @@
   </header>
 
   {#if step < questions.length}
-    <form class="question-card" on:submit|preventDefault={() => { step < questions.length - 1 ? next() : submit(); }}>
+    <form class="question-card card" on:submit|preventDefault={() => { step < questions.length - 1 ? next() : submit(); }}>
       <h2 id={questions[step].id} class="q-title">{questions[step].title}</h2>
       {#if questions[step].hint}
         <p class="hint">{questions[step].hint}</p>
       {/if}
 
+      <!-- Options rendered as accessible buttons (no checkboxes) -->
       <ul class="options" role="list">
         {#each questions[step].options as opt}
           <li class="option" role="listitem">
-            <label class="checkbox" tabindex="0" on:keydown={(e) => { if (e.key === " " || e.key === "Enter") { e.preventDefault(); toggle(opt.id); } }}>
-                <input
-                    type="checkbox"
-                    bind:checked={answers[opt.id]}
-                    on:change={() => toggle(opt.id)}
-                    aria-checked={!!answers[opt.id]}
-                />
-                <span class="box" aria-hidden="true">
-                    <!-- SVG check appears when .checked class is applied via CSS selector -->
-                    <svg class="check" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                    <path d="M20.3 6.3a1 1 0 0 0-1.6-1.2L9 14.8 5.3 11.1A1 1 0 0 0 3.7 12.7l4 4a1 1 0 0 0 1.4 0l11.2-10.4z" fill="currentColor"/>
-                    </svg>
-                </span>
-                <span class="label-text">{opt.label}</span>
-            </label>
+            <div
+              role="button"
+              tabindex="0"
+              class="option-button {answers[opt.id] ? 'selected' : ''}"
+              aria-pressed={!!answers[opt.id]}
+              on:click={() => toggle(opt.id)}
+              on:keydown={(e) => { if (e.key === " " || e.key === "Enter") { e.preventDefault(); toggle(opt.id); } }}
+            >
+              <span class="label-text">{opt.label}</span>
+            </div>
           </li>
         {/each}
       </ul>
@@ -189,126 +218,233 @@
             >✓</button>
           {/if}
         </div>
-
       </div>
     </form>
   {:else}
     <section class="results card">
       <header>
-        <h2>Results</h2>
-        <p class="support">You did great. Below are tailored suggestions based on your answers.</p>
+        <h2>Results & Recommendations</h2>
+        <p class="muted">Tailored tincture and article title suggestions based on your answers.</p>
       </header>
 
-      {#if resultItems.length === 0}
+      {#if recs.length === 0}
         <p class="muted">No selections were made. Try answering a few questions to get personalized suggestions.</p>
       {:else}
-        <ul class="results-list">
-          {#each resultItems as item}
-            <li class="result-item">{item}</li>
+        <div class="rec-grid">
+          {#each recs as rec}
+            <article class="rec-card">
+              <h3 class="rec-title">{rec.label}</h3>
+
+              <div class="rec-section">
+                <strong>Tinctures & balms</strong>
+                <ul>
+                  {#each rec.tinctures as t}
+                    <li>
+                      <strong>{t.name}</strong>
+                      <div class="small muted">{t.uses.join(", ")}</div>
+                    </li>
+                  {/each}
+                </ul>
+              </div>
+
+              <div class="rec-section">
+                <strong>Suggested reading (titles)</strong>
+                <ul>
+                  {#each rec.articles as a}
+                    <li>{a.title}</li>
+                  {/each}
+                </ul>
+              </div>
+
+            </article>
           {/each}
-        </ul>
+        </div>
       {/if}
 
-      <div class="results-actions">
-        <button class="btn" on:click={() => { step = 0; answers = {}; lastAction = ""; }}>Retake Quiz</button>
-        <button class="btn secondary" on:click={closeToHome}>Close</button>
-      </div>
     </section>
   {/if}
 </section>
 
 <style>
-  :global(:root) {
-    --card-bg: var(--card-bg, #fff);
-    --accent: var(--accent, #2f6f6b);
-    --muted: var(--muted, #6b7280);
-    --primary: var(--primary, #8B5E3C);
+  :root {
+    --toffee-1: #6b3f2b;
+    --toffee-2: #8f5a3b;
+    --toffee-3: #b7865a;
+    --cream-1: #fff7ef;
+    --cream-2: #f3e6d8;
+    --muted: #6b5a50;
+    --card-border: rgba(107,63,43,0.08);
+    --shadow: 0 8px 24px rgba(107,63,43,0.04);
     --title-font: "Lavishly Yours", cursive;
-    --body-font: "Special Elite", "Courier New", monospace;
+    --body-font: "Special Elite", monospace;
   }
 
-  .quiz { padding: 1rem; max-width: 820px; margin: 0 auto; font-family: var(--body-font);}
-  .header-row { display:flex; justify-content:space-between; align-items:center; gap:1rem;font-family: var(--body-font); }
-  .quiz-header h1 { margin: 0 0 0.25rem 0; font-family: var(--title-font); font-size: 2rem; color: var(--primary); }
-  .header-actions { display:flex; gap:0.5rem; align-items:center; }
-  .close-btn { background:transparent; border:1px solid var(--card-border, #e5e7eb); padding:0.35rem 0.6rem; border-radius:8px; cursor:pointer; color:var(--muted); }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 1rem;
+    font-family: var(--body-font);
+    color: var(--toffee-1);
+  }
 
-  .support { margin: 0 0 0.5rem 0; color: var(--muted); }
-  .progress { height: 8px; background: #f1f1f1; border-radius: 999px; overflow: hidden; margin-bottom: 0.5rem; }
-  .progress-bar { height: 100%; background: linear-gradient(90deg, var(--accent), var(--primary)); width: 0%; transition: width .25s ease; }
-  .progress-label { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.75rem; }
+  .card {
+    background: linear-gradient(180deg, var(--cream-2), #fff);
+    border-radius: 12px;
+    padding: 0.85rem;
+    border: 1px solid var(--card-border);
+    box-shadow: var(--shadow);
+    margin-bottom: 1rem;
+  }
 
-  .question-card { background: var(--card-bg); border: 1px solid var(--card-border, #e5e7eb); padding: 1rem; border-radius: 12px; box-shadow: var(--shadow); }
-  .q-title { margin: 0 0 0.25rem 0; font-size: 1.25rem; }
-  .hint { margin: 0 0 0.75rem 0; color: var(--muted); font-size: 0.95rem; }
+  .header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .quiz-header .support {
+    margin: 0.25rem 0 0.5rem 0;
+    color: var(--muted);
+  }
+
+  .quiz-header h1 {
+    margin: 0;
+    font-family: var(--title-font);
+    font-size: 1.9rem;
+    color: var(--toffee-1);
+  }
+
+  .progress {
+    height: 8px;
+    background: #f6f3f0;
+    border-radius: 999px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+  }
+  .progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--toffee-2), var(--toffee-3));
+    width: 0%;
+    transition: width .25s ease;
+  }
+  .progress-label {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 0.5rem;
+  }
+
+  .question-card { margin-top: 1rem; }
+  .q-title {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--toffee-1);
+  }
+  .hint {
+    margin: 0 0 0.75rem 0;
+    color: var(--muted);
+  }
 
   .options { list-style: none; padding: 0; margin: 0 0 1rem 0; display: grid; gap: 0.5rem; }
-  .checkbox { display:flex; align-items:center; gap:0.75rem; cursor:pointer; padding:0.5rem; border-radius:8px; transition: background .12s ease; }
-  .checkbox input { position:absolute; opacity:0; width:0; height:0; pointer-events:none; }
+  .option-button {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    padding: 0.65rem;
+    border-radius: 8px;
+    transition: background .12s ease, border-color .12s ease, transform .06s ease;
+    background: transparent;
+    border: 1px solid transparent;
+    user-select: none;
+  }
+  .option-button:hover { background: rgba(107,63,43,0.03); transform: translateY(-1px); }
+  .option-button:focus { outline: 2px solid rgba(107,63,43,0.08); border-radius: 8px; }
 
-  /* visible box */
-  .box {
-    width:22px;
-    height:22px;
-    border-radius:6px;
-    border:1px solid var(--card-border, #e5e7eb);
-    background: #fff;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    transition: background .18s ease, border-color .18s ease, transform .12s ease;
-    flex: 0 0 22px;
+  .option-button.selected {
+    background: linear-gradient(180deg, rgba(143,90,59,0.08), rgba(183,134,90,0.06));
+    border: 1px solid rgba(143,90,59,0.12);
   }
 
-  /* hidden by default; will be shown when input is checked */
-  .check {
-    width:14px;
-    height:14px;
-    color: white;
-    opacity: 0;
-    transform: scale(0.6) rotate(-10deg);
-    transition: opacity .18s ease, transform .18s cubic-bezier(.2,.9,.2,1);
-  }
-
-  /* when the input is checked, style the box and reveal the check */
-  .checkbox input:checked + .box {
-    background: linear-gradient(180deg, var(--accent), var(--primary));
-    border-color: transparent;
-    transform: translateY(-1px);
-  }
-  .checkbox input:checked + .box .check {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
-  }
-
-  /* subtle hover/focus states */
-  .checkbox:hover { background: rgba(0,0,0,0.02); }
-  .checkbox:focus-within { outline: 2px solid rgba(47,111,107,0.12); border-radius:8px; }
-
-  /* label text */
-  .label-text { font-size: 1rem; color: var(--ink, #1f2937); }
+  .label-text { font-size: 1rem; color: var(--toffee-1); }
 
   .controls { display:flex; justify-content:space-between; align-items:center; gap:1rem; margin-top: 0.5rem; }
   .nav-arrows { display:flex; gap:0.5rem; align-items:center; }
-  .arrow { width:44px; height:44px; border-radius:10px; border:1px solid var(--card-border, #e5e7eb); background:transparent; font-size:1.4rem; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; color:var(--primary); }
-  .arrow[disabled] { opacity:0.45; cursor:not-allowed; }
-  .arrow-active { transform: translateY(1px); box-shadow: inset 0 2px 6px rgba(0,0,0,0.06); background: linear-gradient(90deg, var(--accent), var(--primary)); color:#fff; border-color: transparent; }
 
-  .last-action { text-align:right; }
-  .pill { display:inline-block; padding:0.25rem 0.5rem; border-radius:999px; background:#f3f7f6; color:var(--muted); font-size:0.9rem; border:1px solid rgba(0,0,0,0.04); }
-  .pill strong { color:var(--primary); margin-left:0.35rem; }
+  .arrow {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    border: 1px solid var(--card-border);
+    background: transparent;
+    font-size: 1.4rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--toffee-1);
+    transition: background .12s ease, transform .08s ease;
+  }
+  .arrow:hover { background: rgba(107,63,43,0.04); }
+  .arrow[disabled] { opacity: 0.45; cursor: not-allowed; }
 
-  .results { padding: 1rem; border-radius: 12px; }
-  .results-list { list-style: none; padding: 0; margin: 0.5rem 0 1rem 0; display:flex; flex-direction:column; gap:0.5rem; }
-  .result-item { padding: 0.6rem; border-radius: 8px; background: #fff; border: 1px solid var(--card-border, #e5e7eb); }
+  .arrow-active {
+    transform: translateY(1px);
+    background: linear-gradient(90deg, rgba(143,90,59,0.12), rgba(183,134,90,0.08));
+    color: var(--toffee-1);
+    border-color: transparent;
+  }
 
-  .results-actions { display:flex; gap:0.5rem; justify-content:flex-end; margin-top: 0.75rem; }
-  .btn { background: var(--accent); color: #fff; border: none; padding: 0.5rem 0.9rem; border-radius: 8px; cursor: pointer;font-family: var(--body-font); }
-  .btn.secondary { background: transparent; color: var(--accent); border: 1px solid var(--card-border, #e5e7eb);font-family: var(--body-font); }
+  .results { margin-top: 1rem; }
+  .muted { color: var(--muted); }
 
-  @media (max-width: 700px) {
-    .quiz { padding: 0.75rem; }
-    .q-title { font-size: 1.1rem; }
-    .arrow { width:40px; height:40px; }
+  .rec-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .rec-card {
+    background: linear-gradient(180deg, #fff, var(--cream-1));
+    border-radius: 10px;
+    padding: 0.85rem;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 8px 20px rgba(107,63,43,0.03);
+  }
+  .rec-title { margin: 0 0 0.5rem 0; color: var(--toffee-1); font-weight: 700; }
+
+  .rec-section ul { margin: 0.4rem 0 0 1rem; padding: 0; }
+  .small { font-size: 0.9rem; color: var(--muted); }
+
+  /* FINAL BUTTONS USE BODY FONT */
+  .btn {
+    background: linear-gradient(180deg, var(--toffee-2), var(--toffee-3));
+    color: #fff;
+    border: none;
+    padding: 0.45rem 0.7rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    font-family: var(--body-font);
+  }
+  .btn.ghost {
+    background: transparent;
+    border: 1px solid var(--card-border);
+    color: var(--toffee-1);
+    font-family: var(--body-font);
+  }
+  .btn.secondary {
+    background: transparent;
+    color: var(--toffee-1);
+    border: 1px solid var(--card-border);
+    font-family: var(--body-font);
+  }
+
+  .results-actions { display:flex; gap:0.5rem; justify-content:flex-end; margin-top: 1rem; }
+
+  @media (max-width: 720px) {
+    .header-row { flex-direction: column; align-items: stretch; gap: 0.75rem; }
+    .rec-grid { grid-template-columns: 1fr; }
   }
 </style>

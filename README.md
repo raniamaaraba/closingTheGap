@@ -49,7 +49,7 @@ To help better reccomend and start on a good foot with the user, there will be a
 https://www.apa.org/monitor/2019/01/gen-z 
 https://www.apa.org/monitor/2024/07/antidepressant-use-girls-women-covid-pandemic
 https://www.psychiatrictimes.com/view/managing-adverse-effects-antidepressants
-Herbs for the Everday Life by Bevin Cohen
+Herbs in Every Season by Bevin Cohen
 Herbal Medicine for Modern Life by Ruth A. Blanding
 Natural Health Bible by Steven Bratman, M.D. and David Kroll Ph.D.
 The Bible (King James Version)
