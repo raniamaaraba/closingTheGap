@@ -7,7 +7,8 @@
   import Quiz from "./quiz.svelte";
   import Dictionary from "./directory.svelte";
   import Ailments from "./resources/ailments.svelte";
-  import Verses from "./resources/verses.svelte";
+  import Verses from "./resources/versePage.svelte";
+  import Resources from "./resources/resources.svelte";
 
   //routes
   const routes = {
@@ -16,7 +17,8 @@
     "/quiz": Quiz,
     "/directory": Dictionary,
     "/resources/ailments": Ailments,
-    "/resources/verses": Verses
+    "/resources/versePage": Verses,
+    "/resources/resources" : Resources
   };
 
   //current route path
