@@ -188,8 +188,8 @@
   .dir-item:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(107,63,43,0.12); }
 
   .dir-thumb {
-    width:64px;
-    height:64px;
+    width:160px;
+    height:160px;
     border-radius:10px;
     overflow: hidden;
     flex-shrink:0;
@@ -201,7 +201,7 @@
   .dir-thumb img { width:100%; height:100%; object-fit:cover; display:block; }
 
   .dir-body { flex:1; min-width:0; }
-  .dir-title { margin:0 0 0.25rem 0; font-size:1.05rem; color:var(--toffee-1); line-height:1.15; font-family: var(--body-font); }
+  .dir-title { margin:0 0 0.25rem 0; font-size:0.94rem; color:var(--toffee-1); line-height:1.15; font-family: var(--body-font); }
   .dir-desc { margin:0; color:var(--muted); font-size:0.92rem; font-family: var(--body-font); }
 
   .dir-link { display:inline-flex; align-items:center; gap:0.5rem; margin-top:0.5rem; color:var(--toffee-2); text-decoration:none; font-weight:600; }
