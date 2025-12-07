@@ -204,9 +204,6 @@
   .dir-title { margin:0 0 0.25rem 0; font-size:0.94rem; color:var(--toffee-1); line-height:1.15; font-family: var(--body-font); }
   .dir-desc { margin:0; color:var(--muted); font-size:0.92rem; font-family: var(--body-font); }
 
-  .dir-link { display:inline-flex; align-items:center; gap:0.5rem; margin-top:0.5rem; color:var(--toffee-2); text-decoration:none; font-weight:600; }
-  .dir-link:hover { color:var(--accent); text-decoration:underline; }
-
   .dir-empty { padding:2rem; border-radius:var(--radius); background: linear-gradient(180deg, rgba(183,134,90,0.06), rgba(183,134,90,0.03)); color:var(--muted); text-align:center; }
 
   @media (max-width:1000px) {
