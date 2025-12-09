@@ -80,7 +80,7 @@
   let activeNav = null;
 
   function toggle(optionId) {
-    // multi-select behavior preserved; clicking toggles selection
+    //multi select but it is kinda weird
     if (answers[optionId]) delete answers[optionId];
     else answers[optionId] = true;
     answers = { ...answers };
@@ -174,7 +174,7 @@
         <p class="hint">{questions[step].hint}</p>
       {/if}
 
-      <!-- Options rendered as accessible buttons (no checkboxes) -->
+      <!-- more weirdness-->
       <ul class="options" role="list">
         {#each questions[step].options as opt}
           <li class="option" role="listitem">
@@ -346,7 +346,13 @@
     color: var(--muted);
   }
 
-  .options { list-style: none; padding: 0; margin: 0 0 1rem 0; display: grid; gap: 0.5rem; }
+  .options { 
+    list-style: none; 
+    padding: 0; margin: 0 0 1rem 0; 
+    display: grid; 
+    gap: 0.5rem; 
+  }
+
   .option-button {
     display: flex;
     align-items: center;
@@ -359,18 +365,39 @@
     border: 1px solid transparent;
     user-select: none;
   }
-  .option-button:hover { background: rgba(107,63,43,0.03); transform: translateY(-1px); }
-  .option-button:focus { outline: 2px solid rgba(107,63,43,0.08); border-radius: 8px; }
+  .option-button:hover { 
+    background: rgba(107,63,43,0.03); 
+    transform: translateY(-1px); 
+  }
+
+  .option-button:focus { 
+    outline: 2px solid rgba(107,63,43,0.08); 
+    border-radius: 8px; 
+  }
 
   .option-button.selected {
     background: linear-gradient(180deg, rgba(143,90,59,0.08), rgba(183,134,90,0.06));
     border: 1px solid rgba(143,90,59,0.12);
   }
 
-  .label-text { font-size: 1rem; color: var(--toffee-1); }
+  .label-text { 
+    font-size: 1rem; 
+    color: var(--toffee-1); 
+  }
 
-  .controls { display:flex; justify-content:space-between; align-items:center; gap:1rem; margin-top: 0.5rem; }
-  .nav-arrows { display:flex; gap:0.5rem; align-items:center; }
+  .controls { 
+    display:flex; 
+    justify-content:space-between; 
+    align-items:center; 
+    gap:1rem; 
+    margin-top: 0.5rem; 
+  }
+
+  .nav-arrows { 
+    display:flex; 
+    gap:0.5rem; 
+    align-items:center;
+  }
 
   .arrow {
     width: 44px;
@@ -386,6 +413,7 @@
     color: var(--toffee-1);
     transition: background .12s ease, transform .08s ease;
   }
+
   .arrow:hover { background: rgba(107,63,43,0.04); }
   .arrow[disabled] { opacity: 0.45; cursor: not-allowed; }
 
@@ -416,32 +444,6 @@
 
   .rec-section ul { margin: 0.4rem 0 0 1rem; padding: 0; }
   .small { font-size: 0.9rem; color: var(--muted); }
-
-  /* FINAL BUTTONS USE BODY FONT */
-  .btn {
-    background: linear-gradient(180deg, var(--toffee-2), var(--toffee-3));
-    color: #fff;
-    border: none;
-    padding: 0.45rem 0.7rem;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 700;
-    font-family: var(--body-font);
-  }
-  .btn.ghost {
-    background: transparent;
-    border: 1px solid var(--card-border);
-    color: var(--toffee-1);
-    font-family: var(--body-font);
-  }
-  .btn.secondary {
-    background: transparent;
-    color: var(--toffee-1);
-    border: 1px solid var(--card-border);
-    font-family: var(--body-font);
-  }
-
-  .results-actions { display:flex; gap:0.5rem; justify-content:flex-end; margin-top: 1rem; }
 
   @media (max-width: 720px) {
     .header-row { flex-direction: column; align-items: stretch; gap: 0.75rem; }

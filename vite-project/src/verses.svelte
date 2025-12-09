@@ -42,21 +42,19 @@
   color: var(--toffee-1);
 }
 
-/* Verse styling: no border, no background, no shadow — blends with parent card */
 .verse {
   position: absolute;
   left: 0;
   right: 0;
   padding: 0.5rem 0.75rem;
-  background: transparent;      /* remove white background */
-  border: 0;                    /* remove dashed border */
-  box-shadow: none;             /* remove any shadow */
-  border-radius: 0;             /* remove inner rounding so it sits flush */
+  background: transparent;      
+  border: 0;                   
+  box-shadow: none;             
+  border-radius: 0;            
   line-height: 1.3;
   color: var(--toffee-1);
 }
 
-/* Optional: subtle separator line above the verse (unobtrusive) */
 .verse::before {
   content: "";
   display: block;
@@ -67,6 +65,9 @@
   color: var(--toffee-1);
 }
 
-/* Keep transitions smooth and avoid layout jumps */
-.verse, .verse-frame { -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+.verse, .verse-frame { 
+  -webkit-font-smoothing:antialiased; 
+  -moz-osx-font-smoothing:grayscale; 
+  color: var(--toffee-1);
+  }
 </style>

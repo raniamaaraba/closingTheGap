@@ -9,8 +9,7 @@
 
   let query = "";
   let selected = null;
-
-  // Reactive filtered list (no A-Z filtering)
+  //a-z
   $: filtered = herbs.filter(h => {
     const name = (h.name || "").toLowerCase();
     const short = (h.short || "").toLowerCase();
@@ -39,7 +38,6 @@
   </header>
 
   <div class="card section" style="margin-top:1rem;">
-    <!-- left-aligned grid container -->
     <div class="dict-grid">
       {#each filtered as herb}
         <HerbCard {herb} on:open={() => openHerb(herb)} />
@@ -73,7 +71,6 @@
     --shadow: 0 6px 18px rgba(107,63,43,0.08);
   }
 
-  /* Base */
   .directory {
     background: linear-gradient(180deg, var(--cream-1) 0%, #fffaf3 100%);
     color: var(--toffee-1);
@@ -82,7 +79,6 @@
     font-family: var(--body-font);
   }
 
-  /* Header uses Lavishly Yours */
   .directory-header {
     display:flex;
     align-items:center;
@@ -91,129 +87,9 @@
     margin-bottom:1rem;
   }
 
-  .directory-title {
-    font-family: var(--title-font);
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--toffee-1);
-    margin: 0;
-    letter-spacing: 0.4px;
-  }
-
-  .directory-sub {
-    font-family: var(--title-font);
-    color: var(--muted);
-    font-size: 0.95rem;
-    margin: 0;
-  }
-
-  /* Controls */
-  .directory-controls { display:flex; gap:0.5rem; align-items:center; }
-  .dir-search {
-    background: var(--cream-2);
-    border: 1px solid var(--card-border);
-    padding: 0.5rem 0.75rem;
-    border-radius: 10px;
-    color: var(--toffee-1);
-    outline: none;
-    min-width: 220px;
-    box-shadow: var(--shadow);
-    font-family: var(--body-font);
-  }
-  .dir-search::placeholder { color: var(--muted); }
-
-  .btn {
-    background: linear-gradient(180deg, var(--toffee-2), var(--accent));
-    color: #fff;
-    padding: 0.5rem 0.75rem;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-    box-shadow: 0 6px 12px rgba(199,122,58,0.18);
-    font-family: var(--body-font);
-  }
-
-  /* Grid and items */
-  .dir-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-
-  .dir-item {
-    background: linear-gradient(180deg, var(--cream-2), #fff);
-    border-radius: var(--radius);
-    padding: 0.9rem;
-    border: 1px solid var(--card-border);
-    box-shadow: var(--shadow);
-    display: flex;
-    gap: 0.75rem;
-    align-items: flex-start;
-    transition: transform 160ms ease, box-shadow 160ms ease;
-    font-family: var(--body-font);
-  }
-  .dir-item:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(107,63,43,0.12); }
-
-  .dir-thumb {
-    width:64px;
-    height:64px;
-    border-radius:10px;
-    background: linear-gradient(135deg, var(--toffee-3), var(--toffee-2));
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#fff;
-    font-weight:700;
-    flex-shrink:0;
-    font-family: var(--title-font); /* decorative initial in header font */
-    font-size:1.05rem;
-    letter-spacing:0.6px;
-  }
-
-  .dir-body { flex:1; min-width:0; }
-
-  .dir-title {
-    margin:0 0 0.25rem 0;
-    font-size:1.05rem;
-    color:var(--toffee-1);
-    line-height:1.15;
-    font-family: var(--title-font);
-  }
-
-  .dir-desc {
-    margin:0;
-    color:var(--muted);
-    font-size:0.92rem;
-    font-family: var(--body-font);
-  }
-
-  .dir-link {
-    display:inline-flex;
-    align-items:center;
-    gap:0.5rem;
-    margin-top:0.5rem;
-    color:var(--toffee-2);
-    text-decoration:none;
-    font-weight:600;
-    font-family: var(--body-font);
-  }
-  .dir-link:hover { color:var(--accent); text-decoration:underline; }
-
-  .dir-empty {
-    padding:2rem;
-    border-radius:var(--radius);
-    background: linear-gradient(180deg, rgba(183,134,90,0.06), rgba(183,134,90,0.03));
-    color:var(--muted);
-    text-align:center;
-    font-family: var(--body-font);
-  }
-
+  
   @media (max-width:640px){
     .directory-header { flex-direction:column; align-items:flex-start; gap:0.5rem; }
-    .dir-search { min-width:100%; }
-    .dir-thumb { width:56px; height:56px; }
   }
     
 :global(html), :global(body) {
@@ -222,10 +98,9 @@
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden; /* prevent page-level horizontal scroll */
+  overflow-x: hidden;
 }
 
-/* container: full-width but constrained for readability */
 .container {
   width: 100%;
   max-width: 1100px;
@@ -234,7 +109,6 @@
   box-sizing: border-box;
 }
 
-/* header */
 .directory-header {
   display:flex;
   justify-content:space-between;
@@ -242,7 +116,6 @@
   gap:1rem;
 }
 
-/* Directory.svelte — responsive title */
 .title-block .site-title {
   margin: 0;
   font-family: var(--title-font);
@@ -252,7 +125,6 @@
   letter-spacing: -0.02em;
 }
 
-/* scale down on smaller screens */
 @media (max-width: 900px) {
   .title-block .site-title { font-size: 1.6rem; }
 }
@@ -262,48 +134,21 @@
 
 .subtitle { color:var(--muted); font-size:0.9rem; }
 
-/* controls */
 .controls { display:flex; gap:0.5rem; align-items:center; }
 
-/* Grid: fluid, left-aligned but never wider than container */
 .dict-grid {
   display:grid;
   gap:0.75rem;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items:start;
-
-  /* make grid fill the container without forcing extra width */
   width: 100%;
   max-width: 100%;
-  margin: 0; /* remove right auto that caused extra whitespace */
+  margin: 0; 
   box-sizing: border-box;
   padding: 0;
 }
 
-/* tablet */
-@media (max-width:1000px) {
-  .dict-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
-/* mobile */
-@media (max-width:640px) {
-  .dict-grid { grid-template-columns: 1fr; }
-}
-
-/* card wrapper */
 .card.section { padding:0.75rem; box-sizing: border-box; }
-
-/* ensure herb cards themselves are fluid */
-HerbCard, .herb-card, .card { width: 100%; max-width: 100%; box-sizing: border-box; }
-
-/* images must not overflow */
-img { max-width: 100%; height: auto; display: block; object-fit: cover; }
-
-/* utility */
 .muted { color:var(--muted); margin-top:0.75rem; }
 
-/* debug helper (temporary) - uncomment to find overflow sources */
-/*
-:global(*) { outline: 1px dashed rgba(255,0,0,0.06); }
-*/
 </style>

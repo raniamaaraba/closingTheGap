@@ -17,7 +17,6 @@
 
   <div class="preview">
     <figure class="media" aria-hidden={imgError ? "true" : "false"}>
-      <!-- hard-set image (no conditional) -->
       <img
         src={imageSrc}
         alt={imageAlt}
@@ -51,10 +50,7 @@
   background: #f6f7f9;
 }
 .media img { display: block; width: 100%; height: auto; }
-.placeholder {
-  display: grid; place-items: center;
-  height: 220px; color: var(--muted);
-}
+
 .info .link { color: var(--accent); text-decoration: none; }
 .info .link:hover { text-decoration: underline; }
 </style>

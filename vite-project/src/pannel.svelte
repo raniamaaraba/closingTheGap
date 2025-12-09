@@ -11,7 +11,6 @@
 
   const dispatch = createEventDispatcher();
 
-  // Programmatic nav for regular Svelte SPA with safe modifier handling and fallback
   function nav(url, e) {
     if (e && (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1)) return;
     e?.preventDefault();
@@ -25,7 +24,6 @@
     }
   }
 
-  // More explicit goTo for the Herbs button (logs and notifies parent)
   function goTo(path, e) {
     // allow normal open-in-new-tab / modifier clicks
     if (e && (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1)) return;
@@ -47,17 +45,16 @@
 <aside class="card section side-panel" aria-label="Side panel">
   <h2 class="sr-only">Side panel</h2>
 
-  <!-- Navigation header -->
+  <!--header -->
   <div class="nav-intro" aria-hidden="false">
     <h3 class="nav-title">Navigation</h3>
   </div>
 
-  <!-- Primary shortcuts (stacked) -->
+  <!-- shortcuts-->
   <nav class="nav-icons" aria-label="Primary shortcuts">
     <a class="icon-btn" href="/quiz" title="Quiz" aria-label="Quiz" on:click={(e) => nav('/quiz', e)}>Quiz</a>
     <a class="icon-btn" href="/articles" title="Articles" aria-label="Articles" on:click={(e) => nav('/articles', e)}>Articles</a>
 
-    <!-- Herbs uses goTo which dispatches openDictionary and logs -->
     <a
       class="icon-btn"
       href="/directory"
@@ -69,7 +66,7 @@
     </a>
   </nav>
 
-  <!-- External resources (no arrows) -->
+  <!-- exterbal-->
   <div class="group resources">
     <h3>External resources</h3>
     <ul class="dash-list">
@@ -110,7 +107,6 @@
     border-radius: 10px;
   }
 
-  /* Primary shortcuts stacked vertically */
   .nav-icons {
     display: flex;
     flex-direction: column;
@@ -120,7 +116,6 @@
     justify-content: flex-start;
   }
 
-  /* full-width buttons, one per line */
   .icon-btn {
     display: inline-flex;
     align-items: center;
@@ -146,13 +141,30 @@
     outline: none;
   }
 
-  /* External resources: dash list */
   .resources ul { margin: 0; padding-left: 1rem; }
 
-  /* dash-list: replace bullets with em-dash */
-  .dash-list { list-style: none; margin: 0; padding-left: 1rem; }
-  .dash-list li { position: relative; padding-left: 1.05rem; margin-bottom: 0.35rem; line-height: 1.3; }
-  .dash-list li::before { content: "—"; position: absolute; left: 0; top: 0; color: var(--muted); font-weight: 600; font-family: var(--body-font); line-height: 1; }
+  .dash-list { 
+    list-style: none; 
+    margin: 0; 
+    padding-left: 1rem; 
+  }
+
+  .dash-list li { 
+    position: relative; 
+    padding-left: 1.05rem; 
+    margin-bottom: 0.35rem; 
+    line-height: 1.3; }
+
+  .dash-list li::before { 
+    content: "—"; 
+    position: absolute; 
+    left: 0; 
+    top: 0; 
+    color: var(--muted); 
+    font-weight: 600; 
+    font-family: var(--body-font); 
+    line-height: 1;
+   }
 
   .external-link {
     color: var(--ink, #1f2937);
@@ -164,13 +176,10 @@
   }
   .external-link:hover { text-decoration: underline; color: var(--accent); }
 
-  /* Muted text */
   .muted { color: var(--muted); font-family: var(--body-font); }
 
-  /* Accessibility helper */
   .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 
-  /* Responsive tweaks */
   @media (max-width: 640px) {
     .icon-btn { height: 42px; }
   }

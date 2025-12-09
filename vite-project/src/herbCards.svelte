@@ -50,11 +50,10 @@
   align-items: stretch;
   overflow: hidden;
   transition: transform .12s ease, box-shadow .12s ease;
-  will-change: transform; /* hint to the browser to avoid layout reflow on hover */
+  will-change: transform; 
   -webkit-backface-visibility: hidden;
 }
 
-/* hover and keyboard focus (keeps the lift) */
 .herb-card:hover,
 .herb-card:focus-within,
 .herb-card:focus {
@@ -63,26 +62,23 @@
   outline: none;
 }
 
-/* remove default figure margins and ensure block-level layout */
 .herb-media,
 .herb-media img,
 .herb-media .placeholder {
   display: block;
   margin: 0;
   box-sizing: border-box;
-  line-height: 0; /* remove inline-image descender gap */
+  line-height: 0;
 }
 
-/* consistent aspect ratio and fixed box for every card */
 .herb-media {
   width: 100%;
-  aspect-ratio: 4 / 3; /* change to 1/1 or 16/9 if desired */
+  aspect-ratio: 4 / 3; 
   overflow: hidden;
   background: var(--muted-bg);
   flex-shrink: 0;
 }
 
-/* image fills the container and is cropped to center */
 .herb-media img {
   width: 100%;
   height: 100%;
@@ -95,7 +91,6 @@
   decode: async;
 }
 
-/* placeholder when no image */
 .placeholder {
   display:flex;
   align-items:center;
@@ -105,7 +100,6 @@
   padding:0.5rem;
 }
 
-/* body and meta */
 .herb-body {
   padding: 0.6rem;
   display: flex;
@@ -116,7 +110,6 @@
 .herb-name { margin: 0; font-size: 1rem; line-height: 1.1; }
 .herb-short { margin: 0; color: var(--muted); font-size: 0.85rem; }
 
-/* compact meta rows */
 .meta { margin-top: auto; display: flex; flex-direction: column; gap: 0.25rem; }
 .meta-row { display: flex; gap: 0.5rem; align-items: flex-start; font-size: 0.82rem; color: var(--muted); }
 .meta-row strong { width: 64px; font-weight: 600; color: var(--muted); font-size: 0.78rem; }

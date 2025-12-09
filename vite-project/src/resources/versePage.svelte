@@ -6,7 +6,6 @@
   let q = "";
   let searchEl;
 
-  // Focus the Search component if it exposes a focus method
   onMount(() => {
     searchEl?.focus?.();
   });
@@ -106,7 +105,6 @@
       </div>
     </div>
 
-    <!-- Home button placed to the right, preserving original page layout -->
     <div class="verses-header-right" style="display:flex; gap:0.5rem; align-items:center;">
       <Search bind:this={searchEl} placeholder="Search..." on:search={(e) => q = e.detail?.q ?? ""} compact={true} />
       <HomeButton />
@@ -139,7 +137,7 @@
     --card-border: rgba(0,0,0,0.06);
     --accent: #7a4b2b;
     --muted: #6b7280;
-    --shadow: 0 6px 18px rgba(20,20,20,0.04);
+    --shadow: 0 6px 18px rgba(20,20,20,0.04); 
     --title-font: "Lavishly Yours", cursive;
     --body-font: "Special Elite", monospace;
   }
@@ -147,15 +145,15 @@
   .container { max-width: 980px; margin: 0 auto; padding: 1rem; font-family: var(--body-font); }
   .card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 10px; padding: 0.85rem; box-shadow: var(--shadow); margin-bottom: 1rem; }
 
-  .page-header h1 { margin: 0 0 0.25rem 0; font-family: var(--title-font); color: var(--accent); }
-  .lead { margin: 0 0 0.5rem 0; color: var(--muted); }
+  .page-header h1 { margin: 0 0 0.25rem 0; font-family: var(--title-font); color: var(--toffee-1); }
+  .lead { margin: 0 0 0.5rem 0; color: var(--toffee-1); }
 
   .verses-list .search-row { display:flex; gap:0.5rem; align-items:center; margin-bottom:0.6rem; }
   .count { color:var(--muted); font-size:0.95rem; }
 
   .refs { margin:0; padding-left:1.25rem; }
   .ref-item { margin-bottom:0.9rem; line-height:1.35; }
-  .ref-title { margin:0 0 0.25rem 0; font-weight:700; color:var(--accent); font-family:var(--title-font); font-size:2rem; }
+  .ref-title { margin:0 0 0.25rem 0; font-weight:700; color: var(--toffee-1); font-family:var(--title-font); font-size:2rem; }
   .ref-text { margin:0; color:var(--muted); }
 
   .verses-header {

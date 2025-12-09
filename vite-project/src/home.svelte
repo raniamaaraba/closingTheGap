@@ -5,19 +5,16 @@
   import VersesRotator from "./verses.svelte";
   import HerbModal from "./modal.svelte";
 
-  // Directory preview images (Vite resolves these)
   import tincturesImg from "./assets/tinktures.jpeg";
   import versesImg from "./assets/verses.jpg";
   import herbsImg from "./assets/herbs.jpeg";
 
-  // Directory preview items — use route paths (no .svelte)
   const directoryItems = [
     { img: tincturesImg, href: "/resources/ailments", title: "Ailments", desc: "Care basics and first steps moving forward." },
     { img: versesImg, href: "/resources/versePage", title: "Verses", desc: "List of verses to help you understand the Lord's word." },
     { img: herbsImg, href: "/resources/resources", title: "Resources", desc: "Tools & resources for moving forward in your journey." }
   ];
 
-  // Site state
   let recentPages = [
     { title: "Understanding", href: "/articles/metrics" },
     { title: "Quiz: Gaps 101", href: "/quiz/gaps-101" }
@@ -33,7 +30,7 @@
     ];
   }
 
-  // Verses rotator
+  // verses widget
   const verses = [
     "Proverbs 17:22 -- A joyful heart is good medicine, but a crushed spirit dries up the bones.",
     "Psalm 147:3 -- He heals the brokenhearted and binds up their wounds.",
@@ -42,19 +39,17 @@
     "Luke 1:37 -- For nothing will be impossible with God."
   ];
 
-  // Optional small preview modal state (if you want to preview herbs inline)
   let selected = null;
   function openHerbPreview(h) { selected = h; }
   function closeModal() { selected = null; }
 
-  // Search handlers
+  //search
   function handleGlobalSearch(e) {
     const q = (e.detail?.q || "").trim();
     if (!q) return;
     recentPages = [{ title: `Search: ${q}`, href: `/search?q=${encodeURIComponent(q)}` }, ...recentPages];
   }
 
-  // SPA navigation helper (same pattern used in your panel)
   function nav(url, e) {
     if (e && (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1)) return;
     e?.preventDefault();
@@ -69,7 +64,6 @@
   }
 </script>
 
-<!-- Top header (site title, global search, home) -->
 <header class="header">
   <div class="header-inner container">
     <div class="title">
@@ -83,12 +77,11 @@
   </div>
 </header>
 
-<!-- Main content with center column and side panel -->
+<!--main with the center column and side panel -->
 <main class="main container">
   <div class="center">
     <VersesRotator title="Shuffling verses" {verses} interval={45000} />
 
-    <!-- directory preview placed inside the center column -->
     <section class="card section directory-preview" aria-labelledby="dir-preview-title" style="margin-top:1.25rem;">
       <h2 id="dir-preview-title" class="dir-heading">Directory</h2>
 
@@ -119,7 +112,6 @@
   </div>
 
   <aside class="right-panel">
-    <!-- pass afterQuizArticles so SidePanel can show post-quiz links if needed -->
     <SidePanel {afterQuizArticles} />
   </aside>
 </main>
@@ -134,6 +126,7 @@
   --body-font: "Special Elite", "Courier New", monospace;
 
   /* Toffee Fudge palette */
+  /* images from copilot based on the color pallets in the readme */
   --toffee-1: #6b3f2b;
   --toffee-2: #8f5a3b;
   --toffee-3: #b7865a;
@@ -151,7 +144,6 @@
   --radius: 12px;
 }
 
-/* Global resets and utilities */
 :global(html), :global(body) {
   margin: 0;
   padding: 0;
@@ -162,7 +154,6 @@
 }
 :global(*) { box-sizing: border-box; word-wrap: break-word; }
 
-/* Page container */
 .container {
   width: 100%;
   max-width: 1100px;
@@ -172,7 +163,6 @@
   font-family: var(--body-font);
 }
 
-/* Header */
 .header {
   position: sticky;
   top: 0;
@@ -200,7 +190,6 @@
   font-family: var(--body-font);
 }
 
-/* Main layout */
 .main {
   display: flex;
   gap: 1rem;
@@ -227,7 +216,8 @@
   .center { max-width: 100%; }
 }
 
-/* Directory heading */
+
+ /*direcotory */
 .dir-heading {
   margin: 1.0rem 0 1.0rem 0;
   font-family: var(--body-font);
@@ -236,7 +226,6 @@
   color: var(--toffee-1);
 }
 
-/* Directory grid */
 .dir-grid {
   display: grid;
   gap: 1rem;
@@ -253,8 +242,7 @@
 @media (max-width: 640px) {
   .dir-grid { grid-template-columns: 1fr; }
 }
-
-/* Card */
+ /*issues here with getting alignment right for some reason */
 .dir-card {
   background: var(--surface);
   border: 1px solid var(--card-border);
@@ -273,11 +261,10 @@
   outline: none;
 }
 
-/* Media container: centered focal point and consistent cover behavior */
 .dir-card .dir-media {
   display: block;
-  align-items: flex-start; /* no-op for block, kept for clarity */
-  justify-content: flex-start; /* no-op for block, kept for clarity */
+  align-items: flex-start;
+  justify-content: flex-start; 
   overflow: hidden;
   width: 100%;
   aspect-ratio: 4 / 3;
@@ -285,17 +272,15 @@
   background: linear-gradient(180deg, var(--fudge-2), var(--blush-1));
 }
 
-/* Make image cover but align its focal point to the left */
 .dir-card .dir-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: left center; /* left-aligned crop */
+  object-position: left center; 
   display: block;
   margin: 0;
 }
 
-/* Left-align title and description under the image */
 .dir-card .dir-body {
   padding: 0.85rem;
   display: flex;
@@ -305,13 +290,11 @@
   text-align: left;
 }
 
-/* Keep small-screen adjustments consistent */
 @media (max-width: 420px) {
   .dir-card .dir-media { min-height: 120px; }
   .dir-card .dir-body { padding: 0.6rem; }
 }
 
-/* Title and description */
 .dir-title {
   margin: 0;
   font-size: 1.02rem;
@@ -338,22 +321,10 @@
   font-family: var(--body-font);
 }
 
-/* Focus outlines */
 :global(a:focus), :global(button:focus), .dir-card:focus-within {
   outline: 3px solid rgba(127,90,138,0.12);
   outline-offset: 2px;
 }
 
-
-
-/* Utility: ensure images don't overflow elsewhere */
 img { max-width: 100%; height: auto; display: block; object-fit: cover; }
-
-/* Optional: visually center links inside card when needed */
-.dir-card .dir-body .dir-link-row { display: flex; justify-content: center; width: 100%; }
-
-/* End of CSS */
-
-
-  
 </style>

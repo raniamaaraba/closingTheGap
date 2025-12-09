@@ -19,14 +19,14 @@
     title: "Birth Control and Sexual Desire",
     excerpt: "Wanna fix that acne? Take Birth Control! But oh actually Birth Controls ruin your body and menstrual cycle.",
     currentMedicine: {
+      notes: "IUDs, Nexplanon, birth control shots, birth control patches, birth control pills, sterilization, spermicide, cervical caps, and emergency contraception coined 'Plan B'"
+      },
+    naturalRemedies: {
       body: [
         "Fun Fact! You are supposed to menstrate every cycle--Rejoice God made you that way for a reason! But nowadays, doctors are prescribing birth control pills, IUDS, and other hormonal blocks with no concern for you Bibical Calling as well as your overal health as a woman. 83% of Women in the United States that are on some form of birth control contain progestins that are made from Male hormones. Let that sink in for a second--Male hormoes for you Female body. Yeah, that makes sense. ",
         "Birth Control Pills have been known to lower libido, cause weight gain, mood swings, and even long term infertility in some cases. The hormones in birth control pills are synthetic versions of your natural hormones--estrogen and progesterone. By taking these synthetic hormones, your body stops producing its own natural hormones, which can lead to a decrease in sexual desire and other side effects. Additionally, birth control pills can affect the levels of testosterone in the body, which is also important for sexual health. Women have four main hormones that regulate their entire lives--Estrogen, Progesterone, Testosterone, and Cortisol. Men, on the other hand, only have estrogen and testosterone that go through the same cycle each day. Taking birth control pills can disrupt this delicate balance, changing every fundamental of your body--how your brain processes information, changes your behaviours, and destory your menstrual cycle even after you stop taking the pills.",
         "Now, not only is birth control messsing with your entire body and future life, but what does God have to say about this? In Exodus, we are introduced to God's 10 Commandments, with the 7th being 'Thou shall not commit adultery.' You might wonder how this effects the Lord's view on birth control. 63% of Women who are capable of childbirth are on a birth contraseptive just as a means for Lust rather than the possible phoney use of other conditons. Thou shall not commit adultery is a direct command from God, and by using birth control as a means for lust, you are directly disobeying God's commandment. In 1 Corinthians 6:19-20 it reads 'Do you not know that your bodies are temples of the Holy Spirit, who is in you, whom you have received from God? You are not your own; you were bought at a price. Therefore honor God with your bodies.' By using birth control as a means for lust, you are dishonoring God with your body, which is a temple of the Holy Spirit. It is important to remember that our bodies are not our own, and we should strive to honor God in all that we do, including how we treat our bodies. It is important to note this is also from ages 15-49, in which 83% of 15-24 year olds are using these contraseptives just for the purpose of lust.",
-      ]
-      },
-    naturalRemedies: {
-      notes: "The greatest way to get your body back on track after being on birth control is to improve your lifestyle and take addtional supplements",
+      ],
       herbs: [
         {
           name: "Maca (Lepidium meyenii)",
@@ -78,15 +78,15 @@
   {
     id: "adhd",
     title: "ADHD (Attention‑Deficit/Hyperactivity Disorder)",
-    subtitle: "Medication, herbal supports, routines, and encouragement",
     excerpt: "Think twice next time your physician persribes Adderall--how is this affecting your body?",
     currentMedicine: {
+      notes: "Methylphenidates: Focalin, Methylin oral and chewable, Ritalin. Amphetamine: Adderall, Desoxyn, Evekeo, Zenzedi. Long-term: Adhansia, Azstarys, Apetensio, Concerta, Contempla, Daytrana, Focalin, Jornary, Metadate, Quillivant, Vyvanse."
+    },
+    naturalRemedies: {
       body: [
         "7 million children are reported from ages 3-17 to have ADHD in the United States--yet most parents without thinking twice sign their kids up for Adderall, Dexedrine, or other like drugs. The very same drugs that college kids often use and abuse the system as a gateway drug. But, what is it actually doing to your and your children's body?",
         "The National Health Interview Survey (NHISH) has reported double the amount of cases of ADHD in the last two decades. With ADHD steadily on the rise, it is imperative to understand how these drugs are damaging your body. After just one year of use of Ritalin, the brain shows a 24% increase of dopamine being transmitted. As many know with the current raging Cell Phone addiciotn largely fueled by TikTok, Instagram Reels, and other such short scolling algorithms, dopamine is the key to getting you addicited. The more dopamine your brain recieves without completing a task to release dopamine, the quicker it comes for addicition and self-doubts to trickle in. Instead of taking a medication to help control the transporters of dopamine to control your ADHD, it actually amplifies it.    "
       ],
-    },
-    naturalRemedies: {
       notes: "Consider herbal supports and different types of therapy to negate the sideeffects of ADHD. Chriopathic and vision therapy are two great physical alternatives. It is important to ensure you are getting enough sleep, limiting screen time, exercising, and eating a regular healthy diet alongside supplements",
       herbs: [
         {
@@ -99,13 +99,12 @@
           name: "Ginkgo (Ginkgo biloba)",
           benefits: "Improves the circulation of blood to the brain, enhancing cognitive function and focus.",
           preparation: "Standardized extracts or tinctures.",
-          safety: "May interact with blood thinners; consult a clinician."
+          safety: "May interact with blood thinners"
         },
         {
           name: "Rhodiola (Rhodiola rosea)",
           benefits: "An adaptogen that may help with mental fatigue and focus.",
           preparation: "Tincture or capsule.",
-          safety: "Use cautiously with stimulants and check interactions."
         }
       ],
       tincture: {
@@ -117,14 +116,14 @@
           "Strain and bottle; label clearly.",
           "Use cautiously and consult a clinician if taking prescription stimulants."
         ],
-        safety: "Always check for interactions with prescription ADHD medications."
+        safety: "Always check for interactions with prescription ADHD medications, many have overlapping effects."
       }
     },
     lifestyle: {
       notes: "Structure and environment matter: use planners, timers, task‑breaking, consistent sleep, and regular aerobic exercise. Small habit changes (5–10 minute focused work blocks, decluttered workspace) often yield measurable improvements."
     },
     verses: {
-      text: "Be patient with progress; small, steady steps add up. You are not defined by a diagnosis."
+      text: "Those who hope in the Lord will renew their strength. They will soar on wings like eagles; they will run and not grow weary, they will walk and not be faint. -- Isaiah 40:31"
     },
     sidePoints: [
       "Medication options and monitoring",
@@ -138,13 +137,18 @@
   {
     id: "ocd",
     title: "OCD (Obsessive‑Compulsive Disorder)",
-    subtitle: "Therapy, medication, supportive herbs, and daily routines",
-    excerpt: "Why therapy (ERP) matters, medication options, safe herbal supports for anxiety, and practical daily strategies.",
+    excerpt: "Calling those in their late-teens and early-twenties! OCD might be on your radar.",
     currentMedicine: {
-      notes: "SSRIs at higher therapeutic doses are commonly used; some cases use antipsychotic augmentation. Medication is most effective when combined with evidence‑based therapy such as exposure and response prevention (ERP)."
-    },
+      notes: [
+        "Zoloft, Sertaline, Fluvoxamine, Prozac, Anafranil, Luvox, Paxil",
+        "SSRIs at higher therapeutic doses are commonly used; some cases use antipsychotic augmentation. Medication is most effective when combined with evidence‑based therapy such as exposure and response prevention (ERP)."
+      ],
+      },
     naturalRemedies: {
-      notes: "Herbs that reduce general anxiety may ease distress but are not a substitute for therapy. Below are calming herbs and a gentle tincture approach.",
+      body: [
+            "Although OCD is not fully understood for its causes--it is confirmed that you enviornment play a huge role. It is important to ensure for yourself during the critical ages of development as well as your children that enviornmental factors do not play any part in the development of OCD.",
+            "Before considering your options wheter herbal or with medication--it is important to note that OCD is one of the more likely conditions to be mistaken for another. Make sure you are recieving multiple diagnosises before considering your options. One thing that is critical to understand is majority of the drugs on the market similar to AHDH are actually doing more harm than good. Medications can easily overlap causing chronic conditions and can amplify or start thoughts of suicide and depression. But dont worry! One pill once a day for the next 60 years will fix you right up, as long as you can stay in your own mind that is. It is more important to try to live with your new condition rather than attempt to surpress it and possibly lead you to death. Consider before taking medication herbal supports to calm the anxiety of the compulsive thoughts alsong side SRI treatment."
+          ],  
       herbs: [
         {
           name: "Chamomile (Matricaria recutita)",
@@ -159,27 +163,35 @@
           safety: "Avoid ingesting essential oil; check for skin sensitivity."
         }
       ],
-      tincture: {
-        title: "Calming Tincture (example)",
-        description: "A simple calming blend using chamomile and lavender for occasional anxiety relief.",
-        method: [
-          "Combine dried chamomile flowers and dried lavender in a jar.",
-          "Cover with alcohol or glycerin, seal, and steep for several weeks.",
-          "Strain and bottle; label with contents and date.",
-          "Use as a short-term supportive measure and continue therapy as recommended."
-        ],
-        safety: "Not a replacement for therapy or prescribed medication; consult a clinician if symptoms are severe."
-      }
+      tincture: [
+          {
+          title: "Calming Tincture (example)",
+          description: "A simple calming blend using chamomile and lavender for occasional anxiety relief.",
+          method: [
+            "Combine dried chamomile flowers and dried lavender in a jar.",
+            "Cover with alcohol or glycerin, seal, and steep for several weeks.",
+            "Strain and bottle; label with contents and date.",
+            "Use as a short-term supportive measure and continue therapy as recommended."
+          ],
+        },
+        {
+          title: "Inositol (Vitamin B8) Supplements",
+          benefits: "Many with OCD and depression have lower levels of instiol in their spinal fluid that could applify their condition. Instiol also naturally increases level of serotonin.",
+          method: [
+            "Take a capule of instiol up to 18g per day--start small and work your way up to avoid nausea and other digestive issues.",
+          ]
+        },
+      ]
     },
     lifestyle: {
-      notes: "Consistent practice of ERP techniques, sleep hygiene, stress reduction, and structured schedules support long‑term progress. Small daily wins and tracking exposures help maintain momentum."
+      notes: "Consider SRIs (seretonin reuptake inhibitor) in the form of therapy such as EX/RP (exposure and respone prevention)."
     },
     verses: {
-      text: "Courage grows in small steps. Celebrate progress and seek steady support."
+      text: "He gives strength to the weary and increases the power of the weak. -- Isaiah 40:29"
     },
     sidePoints: [
       "Therapy (ERP) + medication synergy",
-      "Herbal supports for anxiety, not a replacement for therapy",
+      "Herbal supports for anxiety alongside exposure therapy",
       "Daily routines and relapse prevention"
     ],
     image: ocd
@@ -188,29 +200,31 @@
   {
     id: "depression",
     title: "Depression",
-    subtitle: "Medication options, herbal cautions, lifestyle supports, and hope",
-    excerpt: "Common antidepressant classes, herbal interactions to watch for, lifestyle interventions with evidence, and spiritual encouragement.",
+    excerpt: "The largest condition plaguing our generation as we continue to consume medications that are not solving the newest pandemic",
     currentMedicine: {
-      notes: "Antidepressants (SSRIs, SNRIs, atypicals) are commonly used. Choice depends on symptoms and side‑effect profile. Early treatment requires monitoring for mood changes and suicidal ideation—seek immediate help if thoughts of self‑harm occur."
+      notes: "Celexa, Lexapro, Paxil, Prozac, Trintellix, Viibryd, & Zoloft."
     },
     naturalRemedies: {
-      notes: "Some people try St. John's wort, SAMe, or omega‑3s. Below are herbs commonly discussed and a cautious tincture approach.",
+      body:[
+        "As a preface--depession out of all the articles here is the most important to seriously consider. These reccomendations for a natural lifestyle are only in consdieration of mild to moderate cases. If you are expereinceing extreme depression symptoms or life-threatening thoughts please seek out your physical ASAP. When seeking to treat depression naturally after taking oral medications consult your physicial for the best methods of tapering.",
+        "Other than what the media may tell you as to why Gen Z is so depressed, at the end of the day we can really boil it down to what the older generations and our parents have been telling us all along--'it is them damn phones!' Which in reality, seems quite extreme considering how engraded to begin with they are in our society, knowing the harm it can do why would they play such an essential part? The concept of an everything-phone is not the issue however, but how they change your dopamine and seratonin levels. Many racing thoughts and imposter-syndrome symptoms find its way into our hearts and brains, hardening layer by layer like a rock at every girl we compare ourselves too, every good grade we dont have, and the fact that your mom, your best friend, and any person on the internet can share how 'wonderful' their life is compared to yours. Not only this, but during the COVID-19 pandemic, many children that are now young-adults were critically impacted during their critical years of development. Without a solid foundation, cracks start to show and whatever can fit starts to seep in. Without even considering herbal or medical medications, start at the very beginning in therapy. Without having the proper tool-set to treat your depression will lead you down an even deeper and darker hole."
+      ],
       herbs: [
         {
           name: "St. John's wort (Hypericum perforatum)",
           benefits: "Used for mild-to-moderate depression in some studies.",
           preparation: "Standardized extracts; tinctures are also used.",
-          safety: "Many drug interactions (including with antidepressants); do not use without clinician oversight."
+          safety: "Many drug interactions (including with antidepressants); do not use alongside perscriptions."
         },
         {
-          name: "Lavender",
-          benefits: "May help with anxiety and sleep, which can support mood.",
-          preparation: "Tea, tincture, or aromatherapy.",
-          safety: "See safety notes above."
+          name: "Phenylalanine",
+          benefits: "An amino acid precursor to dopamine and norepinephrine",
+          preparation: "Capsules or powder supplements.",
+          safety: "Avoid if pregnant, breastfeeding, or taking MAO inhibitors."
         }
       ],
       tincture: {
-        title: "Mood Support Tincture (example)",
+        title: "Mood Support Tincture)",
         description: "A cautious approach focusing on supportive herbs and avoiding strong antidepressant herbs without clinical oversight.",
         method: [
           "Select mild supportive herbs (e.g., lavender) rather than potent antidepressant herbs unless under clinician guidance.",
@@ -221,13 +235,13 @@
       }
     },
     lifestyle: {
-      notes: "Behavioral activation, regular exercise, sleep regulation, social connection, and small daily goals are evidence‑based supports. Even short, consistent activity can improve mood over weeks."
+      notes: "Behavioral activation, regular exercise, sleep regulation, social connection, and small daily goals are evidence‑based supports. Even short, consistent activity can improve mood over weeks. Pray for the forgiveness of you sins for how you have come to treat yourself during this time."
     },
     verses: {
-      text: "You are not alone; rest, reach out, and take one small step today."
+      text: "The Lord is my strength and my shield; my heart trusts in him, and he helps me. -- Psalm 28:7"
     },
     sidePoints: [
-      "Medication choices and safety monitoring",
+      "Monitor your symptoms along with therapy",
       "Herbal interactions and cautions",
       "Lifestyle interventions and crisis resources"
     ],
@@ -237,19 +251,33 @@
   {
     id: "bipolar-disorder",
     title: "Bipolar Disorder",
-    subtitle: "Specialist care, mood stability, and safe supports",
-    excerpt: "Why specialist diagnosis and mood stabilizers matter, cautious use of supplements, and routine strategies to preserve stability.",
+    excerpt: "You are more than just your manic states, and there is hope beyond the swings when you trust in the Lord.",
     currentMedicine: {
-      notes: "Mood stabilizers (lithium, valproate), certain antipsychotics, and carefully managed antidepressant use (if any) are typical. Bipolar disorder requires specialist management to avoid triggering mania."
+      notes: "Uzedy, Subvenite, Lamictal, Iamotrigine, Seroquel, Lithium, Depakote and many others. Currently 62 approved by the FDA."
     },
     naturalRemedies: {
-      notes: "Omega‑3s have some supportive evidence; many herbs that affect mood are not recommended. Below are conservative options and a note on tincture caution.",
+      body: [
+        "Like depression, bipolar disorder is a serious condition that could put you in life-threatning situations. If you are experiencing serve biporlar disorder in states of mania or manic depression, contact your physician as soon as possible and may God bless you.",
+        "You are much more than the label given to you at your time of diagnosis. Similarly, there is much more than the 'treatment' you are told will help cure your afliction. Alongside therapy treatments, a well-balanced lifestyle of sunlight, healthy diets, and your circadium rhythm are contributing factors to your symptoms with bipolar disorder. These go hand-in-hand with supplements and also good psychologial factors. Large stressesrs in your life such as poor finances and issues with employment, relationships, substance abuse, and depression can all contribute to the worsening of your bipolar symptoms. It is important to ensure you are taking care of your whole self--mind, body, and spirit--to best manage your bipolar disorder."
+      ],      
       herbs: [
         {
           name: "Omega‑3 (fish oil)",
           benefits: "Supportive evidence for mood stability as an adjunct.",
           preparation: "High-quality supplements.",
           safety: "Discuss with your psychiatrist before starting."
+        },
+        {
+          name: "Rhodiola Rosea",
+          benefits: "An adaptogen that may help with stress resilience.",
+          preparation: "Tincture or capsule.",
+          safety: "May interact with other mood-altering medications; consult a clinician."
+        },
+        {
+          name: "S-adenosylmethionine (SAMe)",
+          benefits: "A methyl donor that may support mood.",
+          preparation: "Capsules or tablets.",
+          safety: "May induce mania in bipolar disorder; use only under psychiatric guidance. Consult with a doctor before use."
         }
       ],
       tincture: {
@@ -266,7 +294,7 @@
       notes: "Consistent sleep/wake times, routine, stress management, early warning sign monitoring, and a crisis plan with clinician contact are essential for stability."
     },
     verses: {
-      text: "Stability is built with routine and community; seek wise counsel and keep a plan."
+      text: "Fear not, for I am with you; be not dismayed, for I am your God; I will strengthen you, I will help you, I will uphold you with my righteous right hand. -- Isaiah 41:10"
     },
     sidePoints: [
       "Specialist‑led medication plans",
@@ -279,19 +307,20 @@
   {
     id: "anxiety",
     title: "Anxiety",
-    subtitle: "Medication, calming herbs, practical techniques, and peace",
-    excerpt: "Common medication options, herbal choices with evidence, self‑help techniques, and spiritual reminders for calm.",
+    excerpt: "Anxiety is no fault of your own--but the fault of a fallen world. Learn how to live with your anxiety through practical, herbal, and spiritual means.",
     currentMedicine: {
-      notes: "SSRIs and SNRIs are common long‑term options; short‑term benzodiazepines may be used cautiously. Discuss dependence risks and alternatives with your prescriber."
+      notes: "Common SSRIs are: Celexa, Lexapro, Prozac, Luvox, Paxil, & Zoloft. Benzodiazepines for short-term relief include: Xanax, Valium, Ativan, & Klonopin."
     },
     naturalRemedies: {
-      notes: "Lavender, passionflower, and chamomile are commonly used for mild anxiety. Below are herb entries and a calming tincture example.",
+      body: [
+        "In a society filled with a fast-paced life filled wtih divorced from the natural rhythms of life--anxiety is becoming more and more common. It is important to understand that anxiety is not your fault, but the fault of a fallen world. However, there are many practical steps you can take to help manage your anxiety symptoms. Before considering herbal or medical options, it is important to ensure you are taking care of your whole self--mind, body, and spirit. This includes getting enough sleep, eating a healthy diet, exercising regularly, and managing stress through mindfulness practices or therapy. One of the most common symptoms of anxiety that takes a critical impact on your health both physically and mentally are panic attacks. It is crtiical to work out the scenarios in therapy before looking at alternative treatments for your day to day anxiety.",
+      ],
       herbs: [
         {
-          name: "Chamomile",
-          benefits: "Calming and sleep-supportive.",
-          preparation: "Tea or tincture.",
-          safety: "Generally well tolerated; avoid if allergic to related plants."
+          name: "Kava",
+          benefits: "Used for short-term anxiety relief in some studies.",
+          preparation: "Tincture or tea.",
+          safety: "May cause liver toxicity; avoid with liver disease or alcohol."
         },
         {
           name: "Passionflower (Passiflora incarnata)",
@@ -300,14 +329,14 @@
           safety: "Use cautiously with sedatives; check interactions."
         },
         {
-          name: "Lavender",
-          benefits: "Calming and supportive for mild anxiety.",
-          preparation: "Tea, tincture, or aromatherapy.",
-          safety: "See notes above."
+          name: "Valerian (Valeriana officinalis)",
+          benefits: "Used for mild anxiety and sleep support.",
+          preparation: "Tincture or tea.",
+          safety: "May cause morning grogginess; avoid heavy machinery until you understand how it effects your body."
         }
       ],
       tincture: {
-        title: "Calming Tincture (example)",
+        title: "Calming Tincture",
         description: "A gentle blend for occasional anxiety relief using chamomile and passionflower.",
         method: [
           "Combine dried chamomile and passionflower in a jar and cover with alcohol or glycerin.",
@@ -315,7 +344,7 @@
           "Strain and bottle; label with contents and date.",
           "Use as a short-term supportive measure and consult a clinician if symptoms persist."
         ],
-        safety: "Not a replacement for therapy or prescribed medication; check interactions with other medicines."
+        safety: "I have said these things to you, that in me you may have peace. In the world you will have tribulation. But take heart; I have overcome the world.-- John 16:33"
       }
     },
     lifestyle: {
@@ -335,10 +364,9 @@
   {
     id: "insomnia",
     title: "Insomnia",
-    subtitle: "Medicines, herbal sleep aids, and practical sleep hygiene",
-    excerpt: "Overview of common sleep aids, herbal options, and stepwise sleep hygiene to restore rest.",
+    excerpt: "Can't sleep? Learn why over-the-counter and perscription sleeping drugs like melatonion actually contain more than they are worth.",
     currentMedicine: {
-      notes: "Short‑term prescription sleep aids and melatonin are sometimes used. Discuss duration and next steps with a clinician to avoid dependence."
+      notes: "Perscription options include: Quviviq, Silenor, Lunesta, Davigo and many more. Over-the-counter options include melatonin, diphenhydramine (Benadryl), doxylamine, valerian, and others. Use under clinician guidance for safety and effectiveness."
     },
     naturalRemedies: {
       notes: "Valerian, chamomile, and passionflower are commonly used for sleep support. Below is a sleep tincture example.",
@@ -678,13 +706,13 @@
     --body-font: "Special Elite", monospace;
   }
 
-  .container { max-width:1100px; margin:0 auto; padding:1rem; font-family:var(--body-font); color:var(--accent); }
+  .container { max-width:1100px; margin:0 auto; padding:1rem; font-family:var(--body-font); color: var(--toffee-1); }
 
   .card { background: linear-gradient(180deg,var(--cream-2),#fff); border-radius:12px; padding:1rem; border:1px solid var(--card-border); box-shadow:var(--shadow); }
 
   .page-header { display:flex; justify-content:space-between; align-items:center; gap:1rem; margin-bottom:1rem; }
-  .header-left h1 { margin:0; font-family:var(--title-font); font-size:1.9rem; color:var(--accent); }
-  .lead { margin:0.25rem 0 0 0; color:var(--muted); font-size:0.95rem; }
+  .header-left h1 { margin:0; font-family:var(--title-font); font-size:2.7rem; color: var(--toffee-1); }
+  .lead { margin:0.25rem 0 0 0; color: var(--toffee-1); font-size:0.95rem; }
 
   .header-right { display:flex; gap:0.5rem; align-items:center; }
   .search { padding:0.45rem 0.6rem; border-radius:8px; border:1px solid var(--card-border); background:#fbfbfd; font-family:var(--body-font); color:var(--accent); }
@@ -728,12 +756,12 @@
     justify-content:center;
     background: linear-gradient(135deg, rgba(122,75,43,0.06), rgba(183,134,90,0.04));
   }
-  .media-initial { font-family:var(--title-font); color:var(--accent); font-size:2rem; }
+  .media-initial { font-family:var(--title-font); color: var(--toffee-1); font-size:2rem; }
 
   .post-body { padding: 0.9rem; background: transparent; }
-  .post-title { margin:0 0 0.25rem 0; font-family:var(--title-font); font-size:1.15rem; color:var(--accent); }
-  .post-sub { margin:0 0 0.5rem 0; color:var(--muted); font-size:0.92rem; }
-  .post-excerpt { margin:0; color:var(--muted); line-height:1.45; }
+  .post-title { margin:0 0 0.25rem 0; font-family:var(--title-font); font-size:1.15rem; color: var(--toffee-1); }
+  .post-sub { margin:0 0 0.5rem 0; color: var(--toffee-1); font-size:0.92rem; }
+  .post-excerpt { margin:0; color: var(--toffee-1); line-height:1.45; }
 
   /* FULL-SCREEN OVERLAY */
   .overlay {
@@ -760,8 +788,8 @@
   }
 
   .detail-header { display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; }
-  .detail-header h2 { margin:0; font-family:var(--title-font); color:var(--accent); font-size:1.4rem; }
-  .detail-sub { color:var(--muted); margin-top:0.25rem; }
+  .detail-header h2 { margin:0; font-family:var(--title-font); color: var(--toffee-1); font-size:2.2rem; }
+  .detail-sub { color: var(--toffee-1);; margin-top:0.25rem; }
 
   .detail-close {
     background:transparent;
@@ -770,7 +798,7 @@
     padding:0.35rem 0.6rem;
     cursor:pointer;
     font-family:var(--body-font);
-    color:var(--accent);
+    color: var(--toffee-1);
   }
 
   .detail-image-wrap { margin-top:0.8rem; display:flex; justify-content:center; }
@@ -780,24 +808,24 @@
     margin-top:0.9rem;
     overflow:auto;
     padding-right: 0.5rem;
-    color:var(--muted);
+    color: var(--toffee-1);
     line-height:1.6;
     flex:1;
     -webkit-overflow-scrolling: touch;
   }
 
   .detail-section { margin-bottom:1rem; }
-  .detail-section h4 { margin:0 0 0.4rem 0; font-family:var(--title-font); color:var(--accent); font-size:2rem; }
+  .detail-section h4 { margin:0 0 0.4rem 0; font-family:var(--title-font); color: var(--toffee-1); font-size:2rem; }
   .herb-list { list-style:none; padding:0; margin:0.4rem 0 0 0; }
   .herb-list li { margin-bottom:0.6rem; }
-  .tiny { font-size:0.85rem; color:var(--muted); margin-top:0.15rem; }
+  .tiny { font-size:0.85rem; color: var(--toffee-1); margin-top:0.15rem; }
 
-  .article-paragraph { margin: 0 0 1rem 0; line-height:1.6; color:var(--muted); font-size:1rem; }
+  .article-paragraph { margin: 0 0 1rem 0; line-height:1.6; color: var(--toffee-1); font-size:1rem; }
 
   .detail-footer { margin-top:0.6rem; display:flex; justify-content:flex-end; gap:0.5rem; }
 
   .btn { padding:0.45rem 0.7rem; border-radius:8px; border:none; cursor:pointer; font-family:var(--body-font); background:linear-gradient(180deg,#8f5a3b,#b7865a); color:#fff; }
-  .btn.secondary { background:transparent; border:1px solid var(--card-border); color:var(--accent); }
+  .btn.secondary { background:transparent; border:1px solid var(--card-border); color: var(--toffee-1); }
 
   @media (max-width: 720px) {
     .overlay { padding: 4vh 3vw; }

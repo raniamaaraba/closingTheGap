@@ -5,7 +5,7 @@
   const dispatch = createEventDispatcher();
 
   let query = "";
-  // SPA navigation helper (keeps behavior consistent with your app)
+  // SPA nav
   function nav(url, e) {
     if (e && (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1)) return;
     e?.preventDefault();
@@ -64,7 +64,6 @@
         { name: "Milky oats (Avena)", img: avena, uses: ["Nervine‑tonic", "Burnout", "Wired‑tired states"] }
     ];
 
-  // Reactive filtered list
   $: filtered = tinctures.filter(t => {
     const q = (query || "").trim().toLowerCase();
     if (!q) return true;

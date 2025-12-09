@@ -1,11 +1,10 @@
-<!-- src/lib/components/Search.svelte -->
 <script>
   import { createEventDispatcher } from "svelte";
   export let placeholder = "Search...";
   export let showLetters = false;
   export let letters = [];
   export let buttonLabel = "Search";
-  export let compact = false; // smaller styling for header
+  export let compact = false; 
 
   const dispatch = createEventDispatcher();
   let q = "";
@@ -20,7 +19,6 @@
     dispatch("filter", { letter });
   }
 
-  // expose a small clear helper (optional)
   function clear() {
     q = "";
     dispatch("search", { q: "" });
@@ -60,7 +58,6 @@
     --accent: var(--accent, #c77a3a);
   }
 
-  /* Search container uses the Special Elite body font for a typewriter feel */
   .search {
     display: flex;
     gap: 0.5rem;
@@ -92,7 +89,6 @@
     max-width: 260px;
   }
 
-  /* Buttons follow the Toffee Fudge tokens and use Special Elite for labels */
   .btn {
     border: none;
     background: var(--button-bg);
@@ -114,7 +110,6 @@
     font-weight: 600;
   }
 
-  /* Letter chips and tabs use the body font; tabs get a decorative header font option */
   .letters {
     margin-top: 0.5rem;
     display: flex;
@@ -135,18 +130,13 @@
     transition: transform .08s ease, background .12s ease;
   }
 
-  /* If you want some tabs to feel more decorative, add .tab.decorative to use the header font */
-  .tab.decorative {
-    font-family: var(--title-font);
-    letter-spacing: 0.6px;
-  }
+
 
   .tab:hover {
     filter: brightness(0.98);
     transform: translateY(-1px);
   }
 
-  /* Small responsive tweak */
   @media (max-width: 640px) {
     .search { gap: 0.4rem; }
     .search input { max-width: 100%; font-size: 0.95rem; }

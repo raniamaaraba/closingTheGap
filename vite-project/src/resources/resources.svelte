@@ -4,7 +4,7 @@
   import { createEventDispatcher, onMount } from "svelte";
   const dispatch = createEventDispatcher();
 
-  // SPA nav helper (same pattern used elsewhere)
+  //spa again
   function nav(url, e) {
     if (e && (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1)) return;
     e?.preventDefault();
@@ -16,10 +16,9 @@
     }
   }
 
-  // Search state
+  //search q
   let q = "";
 
-  // Resources provided by you (web links + books + Bible)
   const resources = [
     {
       type: "article",
@@ -83,12 +82,89 @@
     },
     {
       type: "article",
+      title: "ADHD Medication",
+      href: "https://my.clevelandclinic.org/health/treatments/11766-adhd-medication",
+    },
+    {
+      type: "article",
       title: " 14 Ways Birth Control Piills Rob Us of Our Health",
       href: "https://integrativehg.com/14-ways-birth-control-pills-rob-us-of-our-health/"
+    },
+    {
+      type: "article",
+      title: "Birth Control",
+      href: "https://www.bedsider.org/birth-control?gad_source=1&gad_campaignid=22511485888&gbraid=0AAAAA_fg60sgwqs01ICn6zj8WAZUwRuLi&gclid=Cj0KCQiAi9rJBhCYARIsALyPDtutOu9Vha7mHDRJT4YHoEhapP8ygjqF6Sp8xX8wao_heP3Q781ntTEaAuLcEALw_wcB"
+    },
+    {
+      type: "article",
+      title: "Clomipramine Capsules",
+      href: "https://my.clevelandclinic.org/health/drugs/19957-clomipramine-capsules"
+    },
+    {
+      type: "article",
+      title: "Some OCD Patients Who Attain 'Wellness' After Exposure Therpy May Safely Taper Off Their SRI Medicines, Study Suggests",
+      href:"https://bbrfoundation.org/content/some-ocd-patients-who-attain-wellness-after-exposure-therapy-may-safely-taper-their-sri"
+    },
+    {
+      type: "article",
+      title: "Obsessive Compulsive Spectrum Disorders",
+      href:"https://www.amenclinics.com/conditions/obsessive-compulsive-spectrum-disorders/"
+    },
+    {
+      type: "article",
+      title: "Medications for Obsessive Compulsive Disorder",
+      href: "https://www.drugs.com/condition/obsessive-compulsive-disorder.html"
+    },
+    {
+      type: "article",
+      title: "Anxiety and Depression in Gen Z",
+      href: "https://www.childrenshopealliance.org/archives/16966"
+    },
+    {
+      type: "article",
+      title: "What Are the Benefits of Getting Off Antidepressants?",
+      href: "https://www.healthline.com/health/depression/benefits-of-getting-off-antidepressants#physical-benefits"
+    },
+    {
+      type: "article",
+      title: "Depression Medicines",
+      href: "https://www.fda.gov/consumers/womens-health-topics/depression-medicines"
+    },
+    {
+     type: "article",
+     title:"10 Alternative Treatments for Bipolar Disorder",
+     href: "https://www.healthline.com/health/bipolar-disorder/alternative-treatments" 
+    },
+    {
+      type: "article",
+      title: "Medications for Bipolar Disorder",
+      href: "https://www.drugs.com/condition/bipolar-disorder.html"
+    },
+    {
+      type: "article",
+      title: "Bipolar Treatments Complementatry to Medication",
+      href: "https://acp-mn.com/about-acp/blog/bipolar-treatments-complementary-to-medication/"
+    },
+    {
+      type: "article",
+      title: "Alterative Treatments for Anxiety",
+      href: "https://www.healthline.com/health/anxiety-alternative-treatments"
+    },
+    {
+      type: "article",
+      title: "Types of Anxiety Medications",
+      href: "https://www.medicalnewstoday.com/articles/323666#types-of-anxiety-medication"
+    },
+    {
+      type: "article",
+      title: "Prescription sleeping pills: What's right for you?",
+      href: "https://www.mayoclinic.org/diseases-conditions/insomnia/in-depth/sleeping-pills/art-20043959"
+    },
+    {
+      
     }
   ];
 
-  // Reactive filtered list
   $: filtered = resources.filter(r => {
     const ql = (q || "").trim().toLowerCase();
     if (!ql) return true;
@@ -99,10 +175,8 @@
     );
   });
 
-  // Optional: expose a "back" event for parent if needed
   function back() { dispatch("backToHome"); }
 
-    // small helper to create a slug (used for internal routing if desired)
   function slugify(text = "") {
     return text.toLowerCase().replace(/[^\w\s-]/g, "").trim().replace(/\s+/g, "-");
   }
