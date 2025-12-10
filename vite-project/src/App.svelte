@@ -30,12 +30,12 @@
 
   onMount(() => {
     window.addEventListener("popstate", handlePop);
-    document.addEventListener("click");
+    document.addEventListener("click", undefined);
   });
 
   onDestroy(() => {
     window.removeEventListener("popstate", handlePop);
-    document.removeEventListener("click");
+    document.removeEventListener("click", undefined);
   });
 </script>
 
