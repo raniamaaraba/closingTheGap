@@ -2,7 +2,7 @@
   import { onMount, onDestroy } from "svelte";
 
   //pages import
-  import Home from "./Home.svelte";
+  import Home from "./home.svelte";
   import Articles from "./articles.svelte";
   import Quiz from "./quiz.svelte";
   import Dictionary from "./directory.svelte";
