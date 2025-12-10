@@ -84,85 +84,159 @@
       type: "article",
       title: "ADHD Medication",
       href: "https://my.clevelandclinic.org/health/treatments/11766-adhd-medication",
+      short: "Current list of current ADHD medications on the market"
     },
     {
       type: "article",
       title: " 14 Ways Birth Control Piills Rob Us of Our Health",
-      href: "https://integrativehg.com/14-ways-birth-control-pills-rob-us-of-our-health/"
+      href: "https://integrativehg.com/14-ways-birth-control-pills-rob-us-of-our-health/",
+      short: "Informative article on how Birth Control is actually effecting your body"
     },
     {
       type: "article",
       title: "Birth Control",
-      href: "https://www.bedsider.org/birth-control?gad_source=1&gad_campaignid=22511485888&gbraid=0AAAAA_fg60sgwqs01ICn6zj8WAZUwRuLi&gclid=Cj0KCQiAi9rJBhCYARIsALyPDtutOu9Vha7mHDRJT4YHoEhapP8ygjqF6Sp8xX8wao_heP3Q781ntTEaAuLcEALw_wcB"
+      href: "https://www.bedsider.org/birth-control?gad_source=1&gad_campaignid=22511485888&gbraid=0AAAAA_fg60sgwqs01ICn6zj8WAZUwRuLi&gclid=Cj0KCQiAi9rJBhCYARIsALyPDtutOu9Vha7mHDRJT4YHoEhapP8ygjqF6Sp8xX8wao_heP3Q781ntTEaAuLcEALw_wcB",
+      short: "The different methods for contraception: from pills to condoms to alternative methods"
     },
     {
       type: "article",
       title: "Clomipramine Capsules",
-      href: "https://my.clevelandclinic.org/health/drugs/19957-clomipramine-capsules"
+      href: "https://my.clevelandclinic.org/health/drugs/19957-clomipramine-capsules",
+      short: "Indepth on medications for OCD medication"
     },
     {
       type: "article",
       title: "Some OCD Patients Who Attain 'Wellness' After Exposure Therpy May Safely Taper Off Their SRI Medicines, Study Suggests",
-      href:"https://bbrfoundation.org/content/some-ocd-patients-who-attain-wellness-after-exposure-therapy-may-safely-taper-their-sri"
+      href:"https://bbrfoundation.org/content/some-ocd-patients-who-attain-wellness-after-exposure-therapy-may-safely-taper-their-sri",
+      short: "Alternative study for OCD treatments"
     },
     {
       type: "article",
       title: "Obsessive Compulsive Spectrum Disorders",
-      href:"https://www.amenclinics.com/conditions/obsessive-compulsive-spectrum-disorders/"
+      href:"https://www.amenclinics.com/conditions/obsessive-compulsive-spectrum-disorders/",
+      short: "More in-depth version of OCD and medications on the market"
     },
     {
       type: "article",
       title: "Medications for Obsessive Compulsive Disorder",
-      href: "https://www.drugs.com/condition/obsessive-compulsive-disorder.html"
+      href: "https://www.drugs.com/condition/obsessive-compulsive-disorder.html",
+      short: "Medications on the market for OCD"
     },
     {
       type: "article",
       title: "Anxiety and Depression in Gen Z",
-      href: "https://www.childrenshopealliance.org/archives/16966"
+      href: "https://www.childrenshopealliance.org/archives/16966",
+      short: "A study portraying the current percentage and causes of depression in Gen Z"
     },
     {
       type: "article",
       title: "What Are the Benefits of Getting Off Antidepressants?",
-      href: "https://www.healthline.com/health/depression/benefits-of-getting-off-antidepressants#physical-benefits"
+      href: "https://www.healthline.com/health/depression/benefits-of-getting-off-antidepressants#physical-benefits",
+      short: "How antidepressants are damaging your body and their effects"
     },
     {
       type: "article",
       title: "Depression Medicines",
-      href: "https://www.fda.gov/consumers/womens-health-topics/depression-medicines"
+      href: "https://www.fda.gov/consumers/womens-health-topics/depression-medicines",
+      short: "A list of the current antidepressant medications on the market to treat generalised depression"
     },
     {
      type: "article",
      title:"10 Alternative Treatments for Bipolar Disorder",
-     href: "https://www.healthline.com/health/bipolar-disorder/alternative-treatments" 
+     href: "https://www.healthline.com/health/bipolar-disorder/alternative-treatments" ,
+     short: "Great options for how to treat bipolar disorder without heavy medications"
     },
     {
       type: "article",
       title: "Medications for Bipolar Disorder",
-      href: "https://www.drugs.com/condition/bipolar-disorder.html"
+      href: "https://www.drugs.com/condition/bipolar-disorder.html",
+      short: "A comprehensive list of the antidepressants for bipolar disorder"
     },
     {
       type: "article",
       title: "Bipolar Treatments Complementatry to Medication",
-      href: "https://acp-mn.com/about-acp/blog/bipolar-treatments-complementary-to-medication/"
+      href: "https://acp-mn.com/about-acp/blog/bipolar-treatments-complementary-to-medication/",
+      short: "How bipolar depression works with your prescription medications"
     },
     {
       type: "article",
       title: "Alterative Treatments for Anxiety",
-      href: "https://www.healthline.com/health/anxiety-alternative-treatments"
+      href: "https://www.healthline.com/health/anxiety-alternative-treatments",
+      short: "Other options for anxiety other than medication"
     },
     {
       type: "article",
       title: "Types of Anxiety Medications",
-      href: "https://www.medicalnewstoday.com/articles/323666#types-of-anxiety-medication"
+      href: "https://www.medicalnewstoday.com/articles/323666#types-of-anxiety-medication",
+      short: "The current FDA approved anxiey medications on the market"
     },
     {
       type: "article",
       title: "Prescription sleeping pills: What's right for you?",
-      href: "https://www.mayoclinic.org/diseases-conditions/insomnia/in-depth/sleeping-pills/art-20043959"
+      href: "https://www.mayoclinic.org/diseases-conditions/insomnia/in-depth/sleeping-pills/art-20043959",
+      short: "How different sleeping pills work and effect you"
     },
     {
-      
-    }
+      type: "article",
+      title: "Melatonin: The Dark Side of the Hormone",
+      href:"https://www.psychiatrictimes.com/view/melatonin-dark-side-hormone",
+      short: "The damaging truth of melatonin"
+    },
+    {
+      type: "article",
+      title: "What's the Deal with Melatonin?",
+      href:"https://www.nm.org/healthbeat/healthy-tips/whats-the-deal-with-melatonin",
+      short: "Additional article about the negative effects of melatonin supplements"
+    },
+    {
+      type: "article",
+      title: "Chronic Pain: Medication decisions",
+      href: "https://www.mayoclinic.org/diseases-conditions/back-pain/in-depth/chronic-pain-medication-decisions/art-20360371",
+      short: "Medications for chronic pain"
+    },
+    {
+      type: "article",
+      title: "Melatonin 5mg Supplement Tablets - up&upTM",
+      href: "https://www.target.com/p/melatonin-5mg-supplement-tablets-up-up/-/A-52260546?preselect=15387236#lnk=sametab",
+      short: "Target's generic brand of melatonin supplements"
+    },
+    {
+      type: "article",
+      title: "Kids' Melatonin Sleep Aid Gummies - 90ct - up&upTM",
+      href: "https://www.target.com/p/kids-39-melatonin-sleep-aid-gummies-90ct-up-38-up-8482/-/A-84689903#lnk=sametab",
+      short: "Target's generic brand of melatonin supplements for children (gummy version)"
+    },
+    {
+      type: "article",
+      title: "Spring Valley Melatonin Tablets SLeep Support Dietary Supplement, 5mg, 120 count",
+      href: "https://www.walmart.com/ip/Spring-Valley-Melatonin-Tablets-Dietary-Supplement-5-mg-120-Count/11047659?classType=VARIANT&athbdg=L1102",
+      short: "Walmart's generic melatonin supplement"
+    },
+    {
+      type: "article",
+      title: "Medications for Chronic Pain",
+      href: "https://www.drugs.com/condition/chronic-pain.html",
+      short: "More medications for Chronic Pain and how the effect your body"
+    },
+    {
+      type: "article",
+      title: "How NSAIDs Like Ibuprofen Could Be Bad for Your Gut Health",
+      href: "https://www.bannerhealth.com/healthcareblog/teach-me/the-effects-of-nsaids-like-ibuprofen-on-your-gut",
+      short: "How NSAIDs are doing more harm than good"
+    },
+    {
+      type: "article",
+      title: "Prescription Opioids Drug Facts",
+      href: "https://nida.nih.gov/publications/drugfacts/prescription-opioids",
+      short: "Opioid usage when it comes to chronic pain"
+    },
+    {
+      type: "article",
+      title: "Scientists make common pain killers from pine trees instead of crude oil",
+      href: "https://www.bath.ac.uk/announcements/scientists-make-common-pain-killers-from-pine-trees-instead-of-crude-oil/",
+      short: "An article demonstrating a 'revalation' in medicinal technology to switch from crude oil"
+    },
+
   ];
 
   $: filtered = resources.filter(r => {

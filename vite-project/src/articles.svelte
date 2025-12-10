@@ -369,7 +369,7 @@
       notes: "Perscription options include: Quviviq, Silenor, Lunesta, Davigo and many more. Over-the-counter options include melatonin, diphenhydramine (Benadryl), doxylamine, valerian, and others. Use under clinician guidance for safety and effectiveness."
     },
     naturalRemedies: {
-      notes: "Valerian, chamomile, and passionflower are commonly used for sleep support. Below is a sleep tincture example.",
+      notes: "Both in the drug and in your brain the key to sleep is melatonin. Melatonin is a hormone produced by the pineal gland that helps regulate your sleep-wake cycle and your circadian rhythm. Although melatonion (the over the counter drug) has been used to help you fall asleep typically 10-15 mintues faster, recent studies of endogenous and exogenous melatonin have been showing that they are damaging your circadian rhythm, metabolish, glucose tolerance, insulin resease, and even weight gain. Whenever you start to play games with your circadian rhythm, things start to go awrry. Your circadian rhythm helps with your body's digestion and your metabolism. Wasn't just a wife's tale when your mom told you don't eat late meals! Your circadian rhythm is expecting those larger calorie, higher glucose meals earlier in the day. When you are eating late at night or taking a drug to effect your overall circadian rhythm, it cannot do its job properly. Even so, taking melatonin in small doses infrequently is not as damaging although it still may mess up your body for the given days after consuming the added hormone. But beware--many over the counter solutions are giving you more than just the hormone. Many youth and young adults prefer the gummy version (or liquid when offered) of vitamins and supplemts, with melatonin being no different. Generic brands at Target, Walmart, and other major retailers are giving you the full truth behind their generic drugs. Many contain carsiongins, patroleum oils, and an unknown list of Natural Flavors.  ",
       herbs: [
         {
           name: "Valerian (Valeriana officinalis)",
@@ -382,10 +382,16 @@
           benefits: "Gentle calming herb supportive of sleep.",
           preparation: "Tea or tincture.",
           safety: "Generally well tolerated."
+        },
+        {
+          name: "Kava",
+          benefits: "Used for short-term anxiety and sleep support.",
+          preparation: "Tincture or tea.",
+          safety: "May cause liver toxicity; avoid with liver disease or alcohol."
         }
       ],
       tincture: {
-        title: "Sleep Support Tincture (example)",
+        title: "Sleep Support Tincture",
         description: "A gentle sleep-support blend using valerian and chamomile prepared as a tincture.",
         method: [
           "Combine dried valerian root and chamomile flowers in a jar and cover with alcohol or glycerin.",
@@ -396,13 +402,13 @@
       }
     },
     lifestyle: {
-      notes: "Consistent bedtime, limiting screens before bed, reducing caffeine, and a calming pre‑sleep routine are first‑line behavioral steps."
+      notes: "Consistent bedtime, limiting screens before bed, eat meals at a regimented time, reduce caffeine, and a calming pre‑sleep routine are first‑line behavioral steps."
     },
     verses: {
-      text: "Rest is part of care; small evening rituals help the body and mind prepare for sleep."
+      text: "Have I not commanded you? Be strong and courageous. Do not be frightened, and do not be dismayed, for the Lord your God is with you wherever you go. -- Joshua 1:9"
     },
     sidePoints: [
-      "Short‑term vs long‑term medication strategies",
+      "Eat regular meals at consistent times",
       "Herbal sleep aids and safety",
       "Behavioral sleep hygiene"
     ],
@@ -415,10 +421,10 @@
     subtitle: "Medication, topical and herbal supports, movement, and coping",
     excerpt: "Medication classes, topical herbal supports, pacing and movement strategies, and spiritual coping resources.",
     currentMedicine: {
-      notes: "Analgesics, adjuvant medications, and topical agents are commonly used. Work with a clinician for a tailored plan."
+      notes: "There are four main types: NSAIDS (non-steroidal anti-inflammatory drugs) such as ibuprofen and naproxen; Acetaminophen (Tylenol); Opioids (e.g., oxycodone, hydrocodone); and Adjuvant medications like certain antidepressants (e.g., amitriptyline) and anticonvulsants. There are current 56 different drugs on the market for chronic pain.",
     },
     naturalRemedies: {
-      notes: "Topical herbal preparations (e.g., arnica in approved formulations) and anti‑inflammatory dietary supports are sometimes used. Below is a topical tincture/infusion approach.",
+      notes: "Got pain? America has you covered! Try our latests and greatest selection of drugs on the market--we currently have Tylenol, Ibuprofen, Codeine, Oxymorphane, and Fentanyl! They're all safe don't worry so take your pick!--Is what Big Pharma has you believe. Temporary relief comes at a great cost. NASAIDS are the most common drug easily sold over the counter such as your ibuprofen and tylenol. Recently, many articles have come out about the effects of the overusage of tylenol espically during pregnancy, but ibuprofen is guilty of the same issues. NSAIDs have been proven to slowly break down your gut lining, killing the healthy bacteria in your gut alongside increasing your risk for conditions like gastritis, peptic ulcer disease, bleeding and sores through the small intestine, and much more. If you are using NSAIDs where you have become dependant and reliant to solve your pain I urge to you to consider herbal alteratives. Instead of the natural plants it used to once use, nowadays you are filling your gut with crude oil. On the flip-side, for those with truly chronic pain (at least deemed by the health system) are often offered opiods, the same strong drugs that are often sold to junkies. Although these drugs are incredibly effective, they are also incredibily addictive. Even without a history of addiction in your family, opiods chemically change your brain to keep you hooked and love the high of dopamine and seratonin you recieve after being in extreme pain.    ",
       herbs: [
         {
           name: "Arnica (Arnica montana) — topical only",
@@ -431,23 +437,30 @@
           benefits: "Anti‑inflammatory dietary support.",
           preparation: "Dietary use, extracts, or topical preparations.",
           safety: "Check interactions with blood thinners."
+        },
+        {
+          name: "D-phenylalanine",
+          benefits: "Increases amino acids in your body",
+          preparation: "Take in capsules",
+          saftey: "When taking dosages near or above 1,500mg, it may cause higher blood pressure, anxiety, and or headaches"
         }
       ],
       tincture: {
-        title: "Topical Infusion (example)",
-        description: "A topical herbal infusion or oil using anti‑inflammatory herbs for external use.",
+        title: "Pain Reliever Tinkture",
+        description: "Contains herbs that reduce inflamattion and pain.",
         method: [
-          "Infuse dried arnica or turmeric in a carrier oil using gentle heat or a long cold infusion.",
-          "Strain and use externally as a rub; label clearly and keep for topical use only."
+          "Gather skullcap leaf, passionflower, ginger root, German chamomile, lemon blam leaf, rose petals (or buds), cramp bark, and vodka",
+          "Respectively, place 1/4 cup, 1/4 cup, 2 tablespoons, 2 tablespoons, 2 tablespoons, 1/4 cup, and 1 cup of 80-prrof vodka into a 16 oz mason jar.",
+          "Seal tightly and keed in a cool, dry, place and flip daily for 6-8 weeks.",
+          "After 6-8 weeks, place into a dropper and take as needed."
         ],
-        safety: "Topical only for certain herbs (e.g., arnica); avoid ingestion and check for skin sensitivity."
       }
     },
     lifestyle: {
       notes: "Pacing, graded movement, physical therapy, sleep, and stress management are central. Small, consistent movement and pacing plans reduce flare‑ups over time."
     },
     verses: {
-      text: "Strength for the day and patience for the journey—seek community and steady care."
+      text: "Be strong and courageous. Do not fear or be in dread of them, for it is the Lord your God who goes with you. He will not leave you or forsake you. -- Deuteronomy 31:6"
     },
     sidePoints: [
       "Medication and specialist referral when needed",
@@ -458,7 +471,6 @@
     } 
     ];
 
-  // UI state
   let q = "";
   let selected = null;
   let lastFocused = null;
@@ -469,7 +481,7 @@
     return (a.title + " " + (a.subtitle || "") + " " + (a.excerpt || "") + " " + (a.sidePoints || []).join(" ")).toLowerCase().includes(s);
   });
 
-  // Normalize different shapes into an array of paragraph strings
+
   function paragraphs(field) {
     if (!field) return [];
     if (Array.isArray(field)) return field.map(String).map(s => s.trim()).filter(Boolean);
@@ -477,7 +489,7 @@
       if (Array.isArray(field.body)) return field.body.map(String).map(s => s.trim()).filter(Boolean);
       if (typeof field.body === "string") return field.body.split(/\n{1,2}/).map(s => s.trim()).filter(Boolean);
       if (typeof field.notes === "string") return field.notes.split(/\n{1,2}/).map(s => s.trim()).filter(Boolean);
-      // fallback: collect string values
+      //fallback
       const vals = Object.values(field).filter(v => typeof v === "string");
       if (vals.length) return vals.join("\n\n").split(/\n{1,2}/).map(s => s.trim()).filter(Boolean);
       return [];
@@ -492,7 +504,6 @@
     await tick();
     const closeBtn = document.querySelector(".detail-close");
     closeBtn?.focus?.();
-    // then move focus into the article body region (programmatic focus)
     const bodyEl = document.querySelector(".detail-body");
     bodyEl?.focus?.();
     document.documentElement.style.overflow = "hidden";
@@ -509,7 +520,7 @@
   }
 
   onMount(() => {
-    // debug logs to help diagnose "not showing" issues
+    //debug log
     console.log("articles count:", articles.length);
     console.log("initial filtered:", filtered);
     const onKey = (e) => { if (e.key === "Escape" && selected) closeDetail(); };
@@ -553,7 +564,6 @@
           on:keydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openArticle(a.id); } }}
           aria-describedby={"excerpt-" + a.id}
         >
-          <!-- big image on top (show full image, no crop) -->
           <div class="post-media-top">
             {#if a.image}
               <img src={a.image} alt={a.imageAlt || a.title} class="thumb-top" loading="lazy" />
@@ -586,7 +596,6 @@
             </div>
           </header>
 
-          <!-- make the whole content (image + sections) scrollable -->
           <section
             class="detail-body"
             role="region"
@@ -681,7 +690,6 @@
               </section>
             {/if}
 
-            <!-- footer actions inside the scrollable region so they are reachable by scrolling -->
             <footer class="detail-footer">
               <div class="detail-actions">
                 <button class="btn secondary" on:click={closeDetail}>Close</button>
@@ -729,7 +737,6 @@
   .post { display:flex; flex-direction:column; gap:0.75rem; cursor:pointer; padding:0; overflow:hidden; border-radius:10px; background: linear-gradient(180deg,var(--cream-2),#fff); border:1px solid var(--card-border); }
   .post:hover { transform: translateY(-4px); transition: transform .14s ease, box-shadow .14s ease; box-shadow: 0 18px 40px rgba(107,63,43,0.08); }
 
-  /* big image on top (show full image) */
   .post-media-top {
     width:100%;
     display:flex;
@@ -763,7 +770,6 @@
   .post-sub { margin:0 0 0.5rem 0; color: var(--toffee-1); font-size:0.92rem; }
   .post-excerpt { margin:0; color: var(--toffee-1); line-height:1.45; }
 
-  /* FULL-SCREEN OVERLAY */
   .overlay {
     position: fixed;
     inset: 0;
@@ -833,6 +839,5 @@
     .thumb-top { max-height: 260px; }
   }
 
-  /* accessibility focus */
   .post:focus, .post[tabindex="0"]:focus, .detail-close:focus { outline: 3px solid rgba(122,75,43,0.12); outline-offset: 3px; }
 </style>
